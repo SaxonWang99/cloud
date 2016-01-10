@@ -10,6 +10,7 @@ https://aws.amazon.com/amazon-linux-ami/2015.09-release-notes/
 # Reference:
 
     https://dev.mysql.com/doc/refman/5.6/en/ha-vm-aws-setup.html
+    https://codeforgeek.com/2015/01/nodejs-mysql-tutorial/
     
 # Setup Steps:
 
