@@ -19,12 +19,15 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 https://docs.c9.io/docs/running-and-debugging-code
 
 https://docs.c9.io/docs/writing-a-nodejs-app
+
 https://docs.c9.io/docs/installing-npm-modules
 
 https://docs.c9.io/docs/writing-a-python-app
+
 https://docs.c9.io/docs/installing-python-packages
 
 https://docs.c9.io/docs/writing-a-ruby-app
+
 https://docs.c9.io/docs/running-a-rails-app
 
 
