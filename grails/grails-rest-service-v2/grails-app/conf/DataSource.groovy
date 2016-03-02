@@ -34,7 +34,7 @@ environments {
 	production {
 		dataSource {
 			dbCreate = "update"  // 'create', 'create-drop','update'
-			url = "jdbc:mysql://52.8.31.91:3306/CMPE281"
+			url = "jdbc:mysql://localhost:3306/CMPE281"
 			driverClassName = "com.mysql.jdbc.Driver"
 			username = "cmpe281"
 			password = "cmpe281"

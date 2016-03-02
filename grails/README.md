@@ -46,7 +46,15 @@ https://grails.org/wiki/installation
     select * from gumball ;
 
 
-# Grail Example Apps
+# Grail Example Apps (on localhost)
+
+    http://localhost:8080/GrailsHelloWorldVer1
+    http://localhost:8080/GrailsGumballMachineVer1
+    http://localhost:8080/GrailsGumballMachineVer2
+    http://localhost:8080/GrailsRestServiceVer1
+    http://localhost:8080/GrailsRestServiceVer2
+
+# Grail Example Apps (on C9)
 
     http://cloud-paulnguyen.c9users.io:8080/GrailsHelloWorldVer1
     http://cloud-paulnguyen.c9users.io:8080/GrailsGumballMachineVer1

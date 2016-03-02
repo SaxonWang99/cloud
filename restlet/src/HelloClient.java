@@ -9,15 +9,14 @@ import org.restlet.resource.ClientResource;
  */
 public class HelloClient {
 
-    public static void main(String[] args) throws Exception {
-        ClientResource helloClientresource = new ClientResource(
-                "http://cloud-paulnguyen.c9users.io:8080/restlet/hello");
-        helloClientresource.get().write(System.out);
-    }
+	// Cloud 9 - REST Service: http://cloud-paulnguyen.c9users.io:8080/restlet/hello
+	// Local   - REST Service: http://localhost:8080/restlet/hello
+    	private static String service_url = "http://localhost:8080/restlet/hello" ;
+
+    	public static void main(String[] args) throws Exception {
+        	ClientResource helloClientresource = new ClientResource( service_url ); 
+		helloClientresource.get().write(System.out);
+		System.out.println("") ;
+    	}
 }
 
-/*
-
-http://cloud-paulnguyen.c9users.io:8080/restlet/hello
-
-*/
