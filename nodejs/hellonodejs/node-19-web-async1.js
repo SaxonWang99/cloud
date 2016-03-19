@@ -4,7 +4,7 @@
 var Client = require('node-rest-client').Client;
 var http = require('http') ;
 var count = "";
-var endpoint = "http://ec2-52-24-214-120.us-west-2.compute.amazonaws.com/GrailsGumballMachineVer2-2.0/gumball" ;
+var endpoint = "http://52.9.120.14:8080/GrailsGumballMachineVer2-2.0/gumball" ;
 
 function request_handler (req, res) {
     var client = new Client();
