@@ -1,7 +1,7 @@
 /*
 
 http://localhost:9090/api/parsetime?iso=2013-08-10T12:10:15.474Z 
-http://localhost:9090//api/unixtime?iso=2013-08-10T12:10:15.474Z 
+http://localhost:9090/api/unixtime?iso=2013-08-10T12:10:15.474Z 
  
 node node-22-json-api.js 9090
  
