@@ -4,7 +4,7 @@
 var Client = require('node-rest-client').Client;
 var http = require('http') ;
 var count = "";
-var endpoint = "http://52.9.120.14:8080/GrailsGumballMachineVer2-2.0/gumball" ;
+var endpoint = "http://localhost:8080/GrailsGumballMachineVer2/gumball" ;
 
 
 function request_handler (req, res) {
@@ -21,8 +21,8 @@ function request_handler (req, res) {
 }
 
 var s = http.createServer(request_handler) ;
-s.listen(8080) ;
+s.listen(9000) ;
 
-// Test with:  curl -X GET -i localhost:8080
+// Test with:  curl -X GET -i localhost:9000
 
 
