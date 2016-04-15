@@ -15,5 +15,9 @@
   },
   "note": {
     "dataSource": "db"
+  },
+  "person": {
+    "dataSource": "db",
+    "public": true
   }
 }
