@@ -18,3 +18,5 @@ function userClicked() {
 
 // simulate a user action
 userClicked();
+userClicked();
+
