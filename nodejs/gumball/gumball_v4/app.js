@@ -77,6 +77,7 @@ db_init = function (callback) {
             db.open(cb);
         },
         // 2. authenticate
+/*        
         function (result, cb) {
             console.log("INIT: STEP 2. Authenticate...");
             db.authenticate(db_user, db_pwd, function(err, res) {
@@ -90,6 +91,7 @@ db_init = function (callback) {
                         }
                     });
         },
+*/
         // 3. fetch collections
         function (result, cb) {
             console.log("INIT: STEP 3. Fetch Collections...");
@@ -306,6 +308,18 @@ Port:   27017
 
 use admin
 db.addUser('cmpe281', 'cmpe281');
+
+use test
+db.runCommand( { createUser: "accountAdmin01",
+                 pwd: "cleartext password",
+                 roles: [
+                           { role: "clusterAdmin", db: "admin" },
+                           { role: "readWriteAnyDatabase", db: "admin" },
+                             "readWrite"
+                        ],
+                 writeConcern: { w: "majority" , wtimeout: 5000 }
+                } )
+                
 
 -- Gumball MongoDB Collection (Create Document)
 
