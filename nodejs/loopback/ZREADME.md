@@ -42,6 +42,9 @@
   Compose your API, run, deploy, profile, and monitor it with Arc
     $ slc arc
 
+  Note:  To Install MySQL Connector
+    $ npm install --save loopback-connector-mysql
+
   Run the app
     $ node .
 
