@@ -114,7 +114,7 @@ rvm gemset use rails3.2
 
 gem list
 
-# List Gems oudated (from active Gem Set)
+# List Gems outdated (from active Gem Set)
 
 gem outdated
 
