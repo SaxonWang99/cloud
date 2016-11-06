@@ -864,13 +864,73 @@
 			]
 		},
 		{
-			"name": "Starbucks Test",
+			"name": "Starbucks API",
 			"description": "",
 			"item": [
 				{
-					"name": "Get Starbucks API | Localhost",
+					"name": "Place Starbucks Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var response = JSON.parse(responseBody);\npostman.setGlobalVariable(\"order_id\", response.id);\n"
+							}
+						}
+					],
 					"request": {
-						"url": "http://localhost:9090/v1/starbucks",
+						"url": "http://{{host}}:{{port}}/v1/starbucks",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"location\": \"take-out\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"whole\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Starbucks Order",
+					"request": {
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{order_id}}",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Starbucks Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var response = JSON.parse(responseBody);"
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{order_id}}",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"location\": \"dine-in\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"skim\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Starbucks Order",
+					"request": {
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{order_id}}",
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -881,6 +941,35 @@
 					},
 					"response": []
 				},
+				{
+					"name": "Pay For Starbucks Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var response = JSON.parse(responseBody);\n\n"
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{order_id}}/pay",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"location\": \"dine-in\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"skim\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Starbucks Test",
+			"description": "",
+			"item": [
 				{
 					"name": "Post Starbucks API | Localhost",
 					"request": {
@@ -889,21 +978,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"qty\": 1,\n  \"name\": \"latte\",\n  \"milk\": \"whole\",\n  \"size\": \"large\"\n}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Get Starbucks API | Docker Local",
-					"request": {
-						"url": "http://192.168.99.100:9090/v1/starbucks",
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "Account #1"
+							"raw": "{\n  \"location\": \"take-out\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"whole\",\n      \"size\": \"large\"\n    }\n  ]\n}"
 						},
 						"description": ""
 					},
@@ -917,21 +992,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"qty\": 1,\n  \"name\": \"latte\",\n  \"milk\": \"whole\",\n  \"size\": \"large\"\n}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Get Starbucks API | Docker Cloud",
-					"request": {
-						"url": "http://aws.nguyenresearch.com:90/v1/starbucks",
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "Account #1"
+							"raw": "{\n  \"location\": \"take-out\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"whole\",\n      \"size\": \"large\"\n    }\n  ]\n}"
 						},
 						"description": ""
 					},
@@ -945,7 +1006,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"qty\": 1,\n  \"name\": \"latte\",\n  \"milk\": \"whole\",\n  \"size\": \"large\"\n}"
+							"raw": "{\n  \"location\": \"take-out\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"whole\",\n      \"size\": \"large\"\n    }\n  ]\n}"
 						},
 						"description": ""
 					},
