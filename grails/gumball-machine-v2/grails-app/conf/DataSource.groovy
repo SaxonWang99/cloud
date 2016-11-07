@@ -28,8 +28,8 @@ environments {
 			dbCreate = "update"  // 'create', 'create-drop','update'
 			url = "jdbc:mysql://localhost:3306/cmpe281"
 			driverClassName = "com.mysql.jdbc.Driver"
-			username = "root"
-			password = "mysql@local"
+			username = "cmpe281"
+			password = "cmpe281"
 		}
 	}
 	production {
