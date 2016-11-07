@@ -1,57 +1,87 @@
 {
-  "id": "79150daa-d057-393b-0365-699a7a449ec1",
+  "id": "c819ed78-4737-c303-42c1-c8b9367c2de1",
   "name": "Postman Globals",
   "values": [
     {
-      "enabled": true,
       "key": "host",
       "type": "text",
-      "value": "aws.nguyenresearch.com"
+      "value": "localhost",
+      "enabled": true
     },
     {
-      "enabled": true,
       "key": "port",
       "type": "text",
-      "value": "8181"
+      "value": "9090",
+      "enabled": true
     },
     {
       "key": "aws_host",
-      "value": "aws.nguyenresearch.com",
       "type": "text",
+      "value": "aws.nguyenresearch.com",
       "enabled": true
     },
     {
       "key": "aws_port",
-      "value": "8181",
       "type": "text",
+      "value": "8181",
       "enabled": true
     },
     {
       "key": "local_host",
-      "value": "localhost",
       "type": "text",
+      "value": "localhost",
       "enabled": true
     },
     {
       "key": "local_port",
-      "value": "8080",
       "type": "text",
+      "value": "8080",
       "enabled": true
     },
     {
       "key": "docker_host",
-      "value": "192.168.99.100",
       "type": "text",
+      "value": "192.168.99.100",
       "enabled": true
     },
     {
       "key": "docker_port",
-      "value": "8080 or 80",
       "type": "text",
+      "value": "8080 or 80",
+      "enabled": true
+    },
+    {
+      "key": "starbucks_host",
+      "type": "text",
+      "value": "localhost",
+      "enabled": true
+    },
+    {
+      "key": "starbucks_port",
+      "type": "text",
+      "value": "9090",
+      "enabled": true
+    },
+    {
+      "key": "starbucks_aws_host",
+      "type": "text",
+      "value": "aws.nguyenresearch.com",
+      "enabled": true
+    },
+    {
+      "key": "starbucks_aws_port",
+      "type": "text",
+      "value": "90",
+      "enabled": true
+    },
+    {
+      "key": "starbucks_order_id",
+      "type": "text",
+      "value": "9dd085ed-c667-4dd4-a4ef-891a6dd9cc8b",
       "enabled": true
     }
   ],
   "_postman_variable_scope": "globals",
-  "_postman_exported_at": "2016-10-15T06:57:22.565Z",
-  "_postman_exported_using": "Postman/4.8.0"
+  "_postman_exported_at": "2016-11-06T19:42:03.943Z",
+  "_postman_exported_using": "Postman/4.8.1"
 }

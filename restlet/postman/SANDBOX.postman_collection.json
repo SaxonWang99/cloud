@@ -874,12 +874,12 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var response = JSON.parse(responseBody);\npostman.setGlobalVariable(\"order_id\", response.id);\n"
+								"exec": "var response = JSON.parse(responseBody);\npostman.setGlobalVariable(\"starbucks_order_id\", response.id);\n"
 							}
 						}
 					],
 					"request": {
-						"url": "http://{{host}}:{{port}}/v1/starbucks",
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order",
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -892,13 +892,22 @@
 				},
 				{
 					"name": "Cancel Starbucks Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var response = JSON.parse(responseBody);"
+							}
+						}
+					],
 					"request": {
-						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{order_id}}",
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{starbucks_order_id}}",
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "Account #1"
+							"raw": ""
 						},
 						"description": ""
 					},
@@ -916,7 +925,7 @@
 						}
 					],
 					"request": {
-						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{order_id}}",
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{starbucks_order_id}}",
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -929,8 +938,17 @@
 				},
 				{
 					"name": "Get Starbucks Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var response = JSON.parse(responseBody);"
+							}
+						}
+					],
 					"request": {
-						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{order_id}}",
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{starbucks_order_id}}",
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -953,12 +971,35 @@
 						}
 					],
 					"request": {
-						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{order_id}}/pay",
+						"url": "http://{{host}}:{{port}}/v1/starbucks/order/{{starbucks_order_id}}/pay",
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"location\": \"dine-in\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"skim\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Starbucks Orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var response = JSON.parse(responseBody);"
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v1/starbucks/orders",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
 						},
 						"description": ""
 					},
@@ -973,7 +1014,7 @@
 				{
 					"name": "Post Starbucks API | Localhost",
 					"request": {
-						"url": "http://localhost:9090/v1/starbucks",
+						"url": "http://localhost:9090/v1/starbucks/order",
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -987,7 +1028,7 @@
 				{
 					"name": "Post Starbucks API |Docker Local",
 					"request": {
-						"url": "http://192.168.99.100:9090/v1/starbucks",
+						"url": "http://192.168.99.100:9090/v1/starbucks/order",
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1001,7 +1042,7 @@
 				{
 					"name": "Post Starbucks API |Docker Cloud",
 					"request": {
-						"url": "http://aws.nguyenresearch.com:90/v1/starbucks",
+						"url": "http://aws.nguyenresearch.com:90/v1/starbucks/order",
 						"method": "POST",
 						"header": [],
 						"body": {
