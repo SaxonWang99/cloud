@@ -13,4 +13,5 @@ class Order {
     public ConcurrentHashMap<String,String> links = new ConcurrentHashMap<String,String>();
     public StarbucksAPI.OrderStatus status ;
     public String message ;
+    
 }

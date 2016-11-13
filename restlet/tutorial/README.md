@@ -45,4 +45,14 @@
     http://imperceptiblethoughts.com/shadow
     https://kousenit.org/2016/03/14/the-shadow-knows-gradle/
 
+## HTTP Authentication Notes
+
+    http://mark-kirby.co.uk/2013/how-to-authenticate-apis-http-basic-vs-http-digest/
+    https://en.wikipedia.org/wiki/Basic_access_authentication
+    https://en.wikipedia.org/wiki/Digest_access_authentication
+    https://restlet.com/technical-resources/restlet-framework/guide/2.3/extensions/oauth
+    https://restlet.com/technical-resources/restlet-framework/javadocs/2.3/jse/ext/org/restlet/ext/oauth/package-summary.html 
+
+
+
 

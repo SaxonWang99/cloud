@@ -1,6 +1,7 @@
 
 .gradle
 /build/
+/certs/
 *.class
 
 # Ignore Gradle GUI config
