@@ -16,10 +16,11 @@ public class StarbucksAPI {
     private static BlockingQueue<String> orderQueue = new LinkedBlockingQueue<String>();
     private static ConcurrentHashMap<String,Order> orders = new ConcurrentHashMap<String,Order>();
 
-    public static void placeOrder(String order_id) {
+    public static void placeOrder(String order_id, Order order) {
         try { 
             StarbucksAPI.orderQueue.put( order_id ) ; 
         } catch (Exception e) {}
+        StarbucksAPI.orders.put( order_id, order ) ;
         System.out.println( "Order Placed: " + order_id ) ;
     }
 
@@ -28,12 +29,8 @@ public class StarbucksAPI {
         new Thread(barista).start();
     }
 
-    public static void addOrder(String key, Order order) {
-        StarbucksAPI.orders.put( key, order ) ;
-    }
-
     public static void updateOrder(String key, Order order) {
-        StarbucksAPI.orders.put( key, order ) ;
+        StarbucksAPI.orders.replace( key, order ) ;
     }
 
     public static Order getOrder(String key) {

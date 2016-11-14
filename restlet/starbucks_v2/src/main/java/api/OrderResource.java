@@ -5,13 +5,27 @@ import org.restlet.representation.* ;
 import org.restlet.ext.json.* ;
 import org.restlet.resource.* ;
 import org.restlet.ext.jackson.* ;
-
+import org.restlet.data.Tag ;
+import org.restlet.data.Form ;
+import org.restlet.data.Header ;
+import org.restlet.data.Digest ;
+import org.restlet.util.Series ;
+import org.restlet.ext.crypto.DigestUtils ;
 import java.io.IOException ;
 
 public class OrderResource extends ServerResource {
 
     @Get
     public Representation get_action() throws JSONException {
+
+        /*
+        Series<Header> headers = (Series<Header>) getRequest().getAttributes().get("org.restlet.http.headers");
+        if ( headers != null ) {
+            String etag = headers.getFirstValue("If-None-Match") ;
+            System.out.println( "HEADERS: " + headers.getNames() ) ;
+            System.out.println( "ETAG: " + etag ) ;            
+        }
+        */
 
         String order_id = getAttribute("order_id") ;
         Order order = StarbucksAPI.getOrder( order_id ) ;
@@ -34,8 +48,22 @@ public class OrderResource extends ServerResource {
                 api.message = "Order not found." ;
                 return new JacksonRepresentation<api.Status>(api) ;
             }                
-            else
-                return new JacksonRepresentation<Order>(order) ;
+            else {
+                Representation result = new JacksonRepresentation<Order>(order) ;
+                try { 
+                    //System.out.println( "Text: " + result.getText() ) ;
+                    String  hash = DigestUtils.toMd5 ( result.getText() ) ;
+                    result.setTag( new Tag( hash ) ) ;
+                    return result ;
+                }
+                catch ( IOException e ) {
+                    setStatus( org.restlet.data.Status.SERVER_ERROR_INTERNAL ) ;
+                    api.Status api = new api.Status() ;
+                    api.status = "error" ;
+                    api.message = "Server Error, Try Again Later." ;
+                    return new JacksonRepresentation<api.Status>(api) ;
+                }
+            }
         }
     }
 
@@ -47,10 +75,22 @@ public class OrderResource extends ServerResource {
 
         Order order = orderRep.getObject() ;
         StarbucksAPI.setOrderStatus( order, getReference().toString(), StarbucksAPI.OrderStatus.PLACED ) ;
-        StarbucksAPI.placeOrder( order.id ) ;
-        StarbucksAPI.addOrder( order.id, order ) ;
+        StarbucksAPI.placeOrder( order.id, order ) ;
 
-        return new JacksonRepresentation<Order>(order) ;
+        Representation result = new JacksonRepresentation<Order>(order) ;
+        try { 
+                System.out.println( "Text: " + result.getText() ) ;
+                String  hash = DigestUtils.toMd5 ( result.getText() ) ;
+                result.setTag( new Tag( hash ) ) ;
+                return result ;
+        }
+        catch ( IOException e ) {
+                setStatus( org.restlet.data.Status.SERVER_ERROR_INTERNAL ) ;
+                api.Status api = new api.Status() ;
+                api.status = "error" ;
+                api.message = "Server Error, Try Again Later." ;
+                return new JacksonRepresentation<api.Status>(api) ;
+        }
     }
 
 
@@ -85,9 +125,22 @@ public class OrderResource extends ServerResource {
         else {
 
             StarbucksAPI.setOrderStatus( order, getReference().toString(), StarbucksAPI.OrderStatus.PLACED ) ;
+            order.id = existing_order.id ;
             StarbucksAPI.updateOrder( order.id, order ) ;  
-
-            return new JacksonRepresentation<Order>(order) ;        
+            Representation result = new JacksonRepresentation<Order>(order) ;
+            try { 
+                    System.out.println( "Text: " + result.getText() ) ;
+                    String  hash = DigestUtils.toMd5 ( result.getText() ) ;
+                    result.setTag( new Tag( hash ) ) ;
+                    return result ;
+            }
+            catch ( IOException e ) {
+                    setStatus( org.restlet.data.Status.SERVER_ERROR_INTERNAL ) ;
+                    api.Status api = new api.Status() ;
+                    api.status = "error" ;
+                    api.message = "Server Error, Try Again Later." ;
+                    return new JacksonRepresentation<api.Status>(api) ;
+            }
         }
     }
 
