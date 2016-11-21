@@ -201,7 +201,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"payment\" : \"quarter\", \t\n  \"action\": \"place-order\"\n}"
+							"raw": "{\n  \"payment\" : \"quarter\",   \n  \"action\": \"place-order\"\n}"
 						},
 						"description": ""
 					},
@@ -235,7 +235,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"payment\" : \"quarter\", \t\n  \"action\": \"place-order\"\n}"
+							"raw": "{\n  \"payment\" : \"quarter\",   \n  \"action\": \"place-order\"\n}"
 						},
 						"description": ""
 					},
@@ -540,6 +540,269 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n  \"subject\": \"RE: Message to Self\",\n  \"content\": \"Hello There!\",\n  \"status\": \"Received\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restlet Tutorial",
+			"description": "",
+			"item": [
+				{
+					"name": "Hello | Get Hello Message",
+					"request": {
+						"url": "http://localhost:8111/hello",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "First App | Get Contacts API",
+					"request": {
+						"url": "http://localhost:8080/contacts/123",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "First App | Update Contacts API",
+					"request": {
+						"url": "http://localhost:8080/contacts/123",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"homeAddress\": {\n    \"line1\": \"10 bd Google\",\n    \"line2\": null,\n    \"zipCode\": \"20010\",\n    \"city\": \"Mountain View\",\n    \"country\": \"USA\"\n  },\n  \"age\": 40\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "First App | Delete Contacts API",
+					"request": {
+						"url": "http://localhost:8080/contacts/123",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Auth | Basic Auth Test",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "scott",
+								"password": "tiger",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "localhost:8182",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic c2NvdHQ6dGlnZXI=",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Auth | Digest Auth Test",
+					"request": {
+						"auth": {
+							"type": "digest",
+							"digest": {
+								"algorithm": "MD5",
+								"username": "scott",
+								"realm": "TestRealm",
+								"password": "tiger",
+								"nonce": "MTQ3ODkzMTA5NTM0NDo0YTI5ZGJhZjJhMzRiNTJiNzQzNjZmY2I1ZjZjMDQ2Mg==",
+								"nonceCount": "",
+								"clientNonce": "",
+								"opaque": "",
+								"qop": ""
+							}
+						},
+						"url": "localhost:8182",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Digest username=\"scott\", realm=\"TestRealm\", nonce=\"MTQ3ODkzMTA5NTM0NDo0YTI5ZGJhZjJhMzRiNTJiNzQzNjZmY2I1ZjZjMDQ2Mg==\", uri=\"/\", response=\"bf484dfbd07d659773d1dec08706da32\", opaque=\"\"",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Mail | Get SSL Content (No Auth)",
+					"request": {
+						"url": "https://localhost:8183/accounts/chunkylover53/mails/123",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Mail | Get SSL Mail (Basic Auth)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "chunkylover53",
+								"password": "pwd",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "https://localhost:8183/accounts/chunkylover53/mails/123",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic Y2h1bmt5bG92ZXI1Mzpwd2Q=",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Mail | Get SSL Mail (Digest Auth)",
+					"request": {
+						"auth": {
+							"type": "digest",
+							"digest": {
+								"algorithm": "MD5",
+								"username": "chunkylover53",
+								"realm": "My Realm",
+								"password": "pwd",
+								"nonce": "MTQ3ODkzODE4MzA1MjpmODExMDU0NzEzYjYwOTZhYTM5NTY3ZjQ4MTQ5MTU1Zg==",
+								"nonceCount": "",
+								"clientNonce": "",
+								"opaque": "",
+								"qop": ""
+							}
+						},
+						"url": "https://localhost:8183/accounts/chunkylover53/mails/123",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Digest username=\"chunkylover53\", realm=\"My Realm\", nonce=\"MTQ3ODkzODE4MzA1MjpmODExMDU0NzEzYjYwOTZhYTM5NTY3ZjQ4MTQ5MTU1Zg==\", uri=\"/accounts/chunkylover53/mails/123\", response=\"98c673e16b9fd81560eeff8eb46f5304\", opaque=\"\"",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Mail | Get SSL Mail (Secret Auth)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "chunkylover53",
+								"password": "pwd",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "https://localhost:8183/accounts/chunkylover53/mails/123",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic Y2h1bmt5bG92ZXI1Mzpwd2Q=",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Mail | Get SSL Mail (Cert Auth)",
+					"request": {
+						"url": "https://localhost:8183/accounts/chunkylover53/mails/123",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic Y2h1bmt5bG92ZXI1Mzpwd2Q=",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
 						},
 						"description": ""
 					},
@@ -860,6 +1123,46 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "Restlet | Cart API | Get Order (Localhost | 8080)",
+					"request": {
+						"url": "http://localhost:8080/cart",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"subject\": \"RE: Message to Self\",\n  \"content\": \"Hello There Again!\",\n  \"status\": \"Received\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet | Cart API | Get Order (AWS | 8080)",
+					"request": {
+						"url": "http://aws.nguyenresearch.com:8080/cart",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"subject\": \"RE: Message to Self\",\n  \"content\": \"Hello There Again!\",\n  \"status\": \"Received\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
 				}
 			]
 		},
@@ -868,13 +1171,17 @@
 			"description": "",
 			"item": [
 				{
-					"name": "Place Starbucks Order",
+					"name": "Place Starbucks Order (V1)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var response = JSON.parse(responseBody);\npostman.setGlobalVariable(\"starbucks_order_id\", response.id);\n"
+								"exec": [
+									"var response = JSON.parse(responseBody);",
+									"postman.setGlobalVariable(\"starbucks_order_id\", response.id);",
+									""
+								]
 							}
 						}
 					],
@@ -891,13 +1198,15 @@
 					"response": []
 				},
 				{
-					"name": "Cancel Starbucks Order",
+					"name": "Cancel Starbucks Order (V1)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var response = JSON.parse(responseBody);"
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
 							}
 						}
 					],
@@ -914,13 +1223,15 @@
 					"response": []
 				},
 				{
-					"name": "Update Starbucks Order",
+					"name": "Update Starbucks Order (V1)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var response = JSON.parse(responseBody);"
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
 							}
 						}
 					],
@@ -937,13 +1248,15 @@
 					"response": []
 				},
 				{
-					"name": "Get Starbucks Order",
+					"name": "Get Starbucks Order (V1)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var response = JSON.parse(responseBody);"
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
 							}
 						}
 					],
@@ -960,13 +1273,17 @@
 					"response": []
 				},
 				{
-					"name": "Pay For Starbucks Order",
+					"name": "Pay For Starbucks Order (V1)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var response = JSON.parse(responseBody);\n\n"
+								"exec": [
+									"var response = JSON.parse(responseBody);",
+									"",
+									""
+								]
 							}
 						}
 					],
@@ -983,18 +1300,194 @@
 					"response": []
 				},
 				{
-					"name": "Get Starbucks Orders",
+					"name": "Get Starbucks Orders (V1)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var response = JSON.parse(responseBody);"
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
 							}
 						}
 					],
 					"request": {
 						"url": "http://{{host}}:{{port}}/v1/starbucks/orders",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Place Starbucks Order (V2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);",
+									"postman.setGlobalVariable(\"starbucks_order_id\", response.id);",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v2/starbucks/order",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"location\": \"take-out\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"whole\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Starbucks Order (V2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"//var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v2/starbucks/order/{{starbucks_order_id}}",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Starbucks Order (V2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v2/starbucks/order/{{starbucks_order_id}}",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"location\": \"dine-in\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"skim\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Starbucks Order (V2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v2/starbucks/order/{{starbucks_order_id}}",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Starbucks Order - ETAG (V2)",
+					"request": {
+						"url": "http://{{host}}:{{port}}/v2/starbucks/order/{{starbucks_order_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "If-None-Match",
+								"value": "W/\"73c2bec219458beb267e7e7587f1b7bb\"",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Pay For Starbucks Order (V2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v2/starbucks/order/{{starbucks_order_id}}/pay",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Starbucks Orders (V2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{host}}:{{port}}/v2/starbucks/orders",
 						"method": "GET",
 						"header": [],
 						"body": {

@@ -18,14 +18,14 @@ public class OrderResource extends ServerResource {
     @Get
     public Representation get_action() throws JSONException {
 
-        /*
+        
         Series<Header> headers = (Series<Header>) getRequest().getAttributes().get("org.restlet.http.headers");
         if ( headers != null ) {
             String etag = headers.getFirstValue("If-None-Match") ;
             System.out.println( "HEADERS: " + headers.getNames() ) ;
             System.out.println( "ETAG: " + etag ) ;            
         }
-        */
+        
 
         String order_id = getAttribute("order_id") ;
         Order order = StarbucksAPI.getOrder( order_id ) ;
@@ -51,8 +51,9 @@ public class OrderResource extends ServerResource {
             else {
                 Representation result = new JacksonRepresentation<Order>(order) ;
                 try { 
-                    //System.out.println( "Text: " + result.getText() ) ;
+                    System.out.println( "Get Text: " + result.getText() ) ;
                     String  hash = DigestUtils.toMd5 ( result.getText() ) ;
+                    System.out.println( "Get Hash: " + hash ) ;
                     result.setTag( new Tag( hash ) ) ;
                     return result ;
                 }
