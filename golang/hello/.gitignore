@@ -31,6 +31,4 @@ vendor/
 bin/
 pkg/
 
-# builds
-main
 
