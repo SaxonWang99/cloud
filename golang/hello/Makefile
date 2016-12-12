@@ -19,3 +19,5 @@ format:
 
 install:
 	go install main
+
+
