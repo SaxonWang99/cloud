@@ -23,7 +23,7 @@
     $ chmod +x *.sh
 
 
-Create VPC:  cmpe281 (Using Wizard)
+# Create VPC:  cmpe281 (Using Wizard)
 
     - Public with Private Subnets
 
@@ -52,13 +52,13 @@ Create VPC:  cmpe281 (Using Wizard)
     Wildcard Mask =         0.0.0.255
 
 
-Create Key Pair: pnguyen
+# Create Key Pair: pnguyen
 
     Download                pnguyen.pem
     openssl x509 -text -in pnguyen.pem
 
     
-Launch EC2 Instance:
+# Launch EC2 Instance:
 
     Amazon Linux AMI 
     T2 Micro Instance
@@ -69,7 +69,7 @@ Launch EC2 Instance:
         Open Ports: 22, 80, 443
     Select Key Pair: pnguyen
 
-Connect to EC2 Instance:
+# Connect to EC2 Instance:
 
     chmod 400 pnguyen.pem
     
@@ -78,7 +78,7 @@ Connect to EC2 Instance:
     ssh -i "pnguyen.pem" ec2-user@ec2-54-67-49-23.us-west-1.compute.amazonaws.com
 
     
-PHP Setup on EC2 Linux AMI:
+# PHP Setup on EC2 Linux AMI:
 
     1. Update Yum and Install LAMP Stack
 
@@ -102,7 +102,7 @@ PHP Setup on EC2 Linux AMI:
     find /var/www -type f -exec sudo chmod 0664 {} \;
 
 
-PHP Test
+# PHP Test
 
     1. Hello LAMP / PHP
 
