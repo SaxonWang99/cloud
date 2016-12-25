@@ -16,9 +16,9 @@
 # Tomcat Setup
 
     cd /home/ubuntu
-    wget http://mirror.reverse.net/pub/apache/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.zip
-    unzip apache-tomcat-7.0.67.zip 
-    mv apache-tomcat-7.0.67/ apache-tomcat
+    wget http://apache.forsale.plus/tomcat/tomcat-7/v7.0.73/bin/apache-tomcat-7.0.73.zip
+    unzip apache-tomcat-7.0.73.zip 
+    mv apache-tomcat-7.0.73/ apache-tomcat
     
 # Tomcat Startup
 
