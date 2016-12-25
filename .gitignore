@@ -1,3 +1,7 @@
+# Java Files
+*.war
+*.class
+
 # Mac Files
 .DS_Store
 

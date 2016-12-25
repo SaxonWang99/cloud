@@ -10,3 +10,5 @@ deploy:
 	rm -rf /home/ubuntu/apache-tomcat/webapps/xmlrpc
 	rm -rf /home/ubuntu/apache-tomcat/webapps/xmlrpc.war
 	cp /home/ubuntu/workspace/xmlrpc/cloud9/xmlrpc.war /home/ubuntu/apache-tomcat/webapps
+
+

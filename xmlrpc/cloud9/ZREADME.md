@@ -28,7 +28,8 @@
     
 # Test Console
 
-     http://cloud-paulnguyen.c9users.io:8080/
+     http://cloud-paulnguyen.c9users.io:8080/  (Tomcat Console)
+     http://cloud-paulnguyen.c9users.io:8080/xmlrpc/xmlrpc.html  (App Console)
      
      Update File:  conf/tomcat-users.xml 
         <role rolename="manager-gui"/>
