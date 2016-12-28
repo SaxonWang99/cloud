@@ -7,13 +7,17 @@ if ( $_POST['button'] == "" )
 ?>
 
 	<H2> CPU and I/O Load Test</H2>
+	<?php
+		echo "Server Name: " . $_SERVER['SERVER_NAME']  ;
+		echo "<br/>" ;
+		echo "Server IP:   " . $_SERVER['SERVER_ADDR'] ;
+	?>
+	<br/>
     <form action="loadtest.php" method="post">
         Start CPU and I/O Load Test (for 5 mins). 
-        <br/>
-        <br/>
+        <br/><br/>
         <input type="submit" name="button" value="Start Test">
     </form>
-
 <?php
 }
 else

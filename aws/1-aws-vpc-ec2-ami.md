@@ -3,7 +3,7 @@
 
     http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html
     
-# Setup Key Pair for EC2 and Download PEM file
+## Setup Key Pair for EC2 and Download PEM file
 
     $ ls -l ec2php.pem 
     -rw-r--r--@ 1 pnguyen  staff  1692 Feb 21 18:01 ec2php.pem
@@ -13,7 +13,7 @@
     $ ls -l ec2php.pem 
     -rw-------@ 1 pnguyen  staff  1692 Feb 21 18:01 ec2php.pem
 
-# PEM Usage on Mac OS X
+## PEM Usage on Mac OS X
     
     ec2.sh:
         ssh -i ec2php.pem ec2-user@<PUBLIC_IP> 
@@ -23,7 +23,7 @@
     $ chmod +x *.sh
 
 
-# Create VPC:  cmpe281 (Using Wizard)
+## Create VPC:  cmpe281 (Using Wizard)
 
     - Public with Private Subnets
 
@@ -32,33 +32,33 @@
     Private subnet instances access the Internet via Network Address Translation (NAT).  
     (Hourly charges for NAT devices apply.)
 
-    CIDR block                          10.0.0.0/16 
-    IP range (network - broadcast)      0.0.0.0 - 10.0.255.255   
-    Subnet Mask                         255.255.0.0  
-    IP Quantity                         65536   
+    CIDR block          		10.0.0.0/16 
+    IP range    				 	0.0.0.0 - 10.0.255.255   
+    Subnet Mask        			255.255.0.0  
+    IP Quantity       			65536   
 
-    Public Subnet:          10.0.0.0/24
-    Network =               10.0.0.0
-    Usable IPs =            10.0.0.1 to 10.0.0.254 for 254
-    Broadcast =             10.0.0.255
-    Netmask =               255.255.255.0
-    Wildcard Mask =         0.0.0.255
+    Public Subnet:				10.0.0.0/24
+    Network =               	10.0.0.0
+    Usable IPs =            	10.0.0.1 to 10.0.0.254 for 254
+    Broadcast =             	10.0.0.255
+    Netmask =               	255.255.255.0
+    Wildcard Mask =         	0.0.0.255
 
-    Private Subnet:         10.0.1.0/24
-    Network =               10.0.1.0
-    Usable IPs =            10.0.1.1 to 10.0.1.254 for 254
-    Broadcast =             10.0.1.255
-    Netmask =               255.255.255.0
-    Wildcard Mask =         0.0.0.255
+    Private Subnet:         	10.0.1.0/24
+    Network =               	10.0.1.0
+    Usable IPs =            	10.0.1.1 to 10.0.1.254 for 254
+    Broadcast =             	10.0.1.255
+    Netmask =               	255.255.255.0
+    Wildcard Mask =         	0.0.0.255
 
 
-# Create Key Pair: pnguyen
+## Create Key Pair: pnguyen-us-west-1
 
-    Download                pnguyen.pem
-    openssl x509 -text -in pnguyen.pem
+    Download                pnguyen-us-west-1.pem
+    openssl x509 -text -in pnguyen-us-west-1.pem
 
     
-# Launch EC2 Instance:
+## Launch EC2 Instance:
 
     Amazon Linux AMI 
     T2 Micro Instance
@@ -67,18 +67,19 @@
     Auto Assign Public IP
     Security Group: cmpe281-dmz (create new)
         Open Ports: 22, 80, 443
-    Select Key Pair: pnguyen
+    Select Key Pair: pnguyen-us-west-1
+    AWS Instance Name:  aws-php
 
-# Connect to EC2 Instance:
+## Connect to EC2 Instance:
 
-    chmod 400 pnguyen.pem
+    chmod 400 pnguyen-us-west-1.pem
     
     Connect to your instance using its Public DNS (For Example):
     
-    ssh -i "pnguyen.pem" ec2-user@ec2-54-67-49-23.us-west-1.compute.amazonaws.com
+    ssh -i "pnguyen-us-west-1.pem" ec2-user@ec2-54-67-49-23.us-west-1.compute.amazonaws.com
 
     
-# PHP Setup on EC2 Linux AMI:
+## PHP Setup on EC2 Linux AMI:
 
     1. Update Yum and Install LAMP Stack
 
@@ -102,7 +103,7 @@
     find /var/www -type f -exec sudo chmod 0664 {} \;
 
 
-# PHP Test
+## PHP Test
 
     1. Hello LAMP / PHP
 
@@ -133,10 +134,12 @@
         -t 10s : Timeout after ten seconds
         -v : Be verbose
 
-  
-  
+## Create PHP AMI Image
 
+	1. Create aws-php-ami
+	2. From aws-php (EC2 instance)
 
+	
 
 
 
