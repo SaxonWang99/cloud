@@ -51,9 +51,11 @@ docker-stop:
 docker-shell:
 	docker exec -it starbucks bash 
 
-kong:
+run-app:
+	docker run -d --name starbucks -td starbucks
 	docker run -d --name kong-database -p 9042:9042 cassandra:2.2
 	docker run -d --name kong \
+			  --link starbucks:starbucks \
               --link kong-database:kong-database \
               -e "KONG_DATABASE=cassandra" \
               -e "KONG_CASSANDRA_CONTACT_POINTS=kong-database" \

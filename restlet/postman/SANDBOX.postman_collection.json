@@ -17,10 +17,7 @@
 						"url": "http://{{host}}:{{port}}/gumball",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -71,10 +68,7 @@
 						"url": "http://{{host}}:{{port}}/v1/gumball",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -125,10 +119,7 @@
 						"url": "http://{{host}}:{{port}}/v2/gumball",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -179,10 +170,7 @@
 						"url": "http://{{host}}:{{port}}/v3/gumball",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -213,10 +201,7 @@
 						"url": "http://{{host}}:{{port}}/v4/gumball",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -253,10 +238,7 @@
 						"url": "http://localhost:8080/restlet/hello",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -267,10 +249,7 @@
 						"url": "http://localhost:8111/test/abcd",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -281,10 +260,7 @@
 						"url": "http://localhost:8111/accounts/",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "Trace results are displayed."
 					},
 					"response": []
@@ -295,10 +271,7 @@
 						"url": "http://localhost:8111/accounts/123",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "Trace results are displayed."
 					},
 					"response": []
@@ -309,10 +282,7 @@
 						"url": "http://localhost:8111/?param=value",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -323,10 +293,7 @@
 						"url": "http://localhost:8111/123",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -337,10 +304,7 @@
 						"url": "http://localhost:8111/?method=options",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -351,10 +315,7 @@
 						"url": "http://localhost:8111/",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -365,10 +326,7 @@
 						"url": "http://localhost:8111/",
 						"method": "OPTIONS",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -393,10 +351,7 @@
 						"url": "http://localhost:8111/accounts/",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -557,10 +512,7 @@
 						"url": "http://localhost:8111/hello",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -571,10 +523,7 @@
 						"url": "http://localhost:8080/contacts/123",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -640,10 +589,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -674,10 +620,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -688,10 +631,7 @@
 						"url": "https://localhost:8183/accounts/chunkylover53/mails/123",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -717,10 +657,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -751,10 +688,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -780,10 +714,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -800,10 +731,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -846,10 +774,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -886,10 +811,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -926,10 +848,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -966,10 +885,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1006,10 +922,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1020,10 +933,7 @@
 						"url": "http://localhost:8080/restlet/hello",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1034,10 +944,7 @@
 						"url": "http://192.168.99.100:8080/restlet/hello",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1048,10 +955,7 @@
 						"url": "http://192.168.99.100/restlet/hello",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1501,6 +1405,521 @@
 			]
 		},
 		{
+			"name": "Starbucks Kong",
+			"description": "",
+			"item": [
+				{
+					"name": "Kong Server Status (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/status",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Cluster Status (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/cluster",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Node Information (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong List APIs (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Add API (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"starbucks\",\n    \"request_path\": \"/starbucks\",\n    \"strip_request_path\": \"false\",\n    \"preserve_host\": \"true\",\n    \"upstream_url\": \"http://starbucks:9090/v3/\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Plugin Add Logfile (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis/starbucks/plugins",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "file-log",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "config.path",
+									"value": "/tmp/kong.log",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Plugin Add Resp Transformer (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis/starbucks/plugins",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "response-transformer",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "config.remove.json",
+									"value": "links",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Plugin Add API Key Auth (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis/starbucks/plugins",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "key-auth",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong API Client Add (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/consumers/",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "apiclient",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong  API Client Add Key (Docker)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);",
+									"postman.setGlobalVariable(\"starbucks_api_key\", response.key);",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/consumers/apiclient/key-auth",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong API Client Delete (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/consumers/apiclient",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "apiclient",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong API Clients List (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/consumers",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Get API Details (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis/starbucks",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Delete API (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis/starbucks",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Get List of API Plugins (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis/starbucks/plugins",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Plugin Remove from API (Docker)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_port}}/apis/starbucks/plugins/12cc3fd7-c07e-4c3b-bc0f-465e311bf948",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Starbucks API | Place Starbucks Order (V3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);",
+									"postman.setGlobalVariable(\"starbucks_order_id\", response.id);",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_api_port}}/starbucks/order",
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{starbucks_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"location\": \"take-out\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"whole\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Starbucks API | Cancel Starbucks Order (V3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"//var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_api_port}}/starbucks/order/{{starbucks_order_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{starbucks_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Starbucks API | Update Starbucks Order (V3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_api_port}}/starbucks/order/{{starbucks_order_id}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{starbucks_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"location\": \"dine-in\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"skim\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Starbucks API | Get Starbucks Order (V3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_api_port}}/starbucks/order/{{starbucks_order_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{starbucks_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Starbucks API | Get Starbucks Order - ETAG (V3)",
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_api_port}}/starbucks/order/{{starbucks_order_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "If-None-Match",
+								"value": "W/\"35883c054313ac9f0ab39736dce6701a\"",
+								"description": ""
+							},
+							{
+								"key": "apikey",
+								"value": "{{starbucks_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Starbucks API | Pay For Starbucks Order (V3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_api_port}}/starbucks/order/{{starbucks_order_id}}/pay",
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{starbucks_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Starbucks API | Get Starbucks Orders (V3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_api_port}}/starbucks/orders",
+						"method": "GET",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{starbucks_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Starbucks API | Get Starbucks Orders (No API Key)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var response = JSON.parse(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{kong_host}}:{{kong_api_port}}/starbucks/orders",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Starbucks Test",
 			"description": "",
 			"item": [
@@ -1533,9 +1952,23 @@
 					"response": []
 				},
 				{
-					"name": "Post Starbucks API |Docker Cloud",
+					"name": "Post Starbucks API |Docker Cloud (DNS)",
 					"request": {
 						"url": "http://aws.nguyenresearch.com:90/v1/starbucks/order",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"location\": \"take-out\",\n  \"items\": [\n    {\n      \"qty\": 1,\n      \"name\": \"latte\",\n      \"milk\": \"whole\",\n      \"size\": \"large\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Starbucks API |Docker Cloud (Host IP)",
+					"request": {
+						"url": "http://54.201.122.231:90/v1/starbucks/order",
 						"method": "POST",
 						"header": [],
 						"body": {
