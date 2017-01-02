@@ -2,7 +2,7 @@
 all: clean
 
 clean: 
-	find . -name "main" -exec rm -f {} \; > /dev/null 2>&1 
+	find . -name 'hello' -type f -exec rm -f {} \;
 	go clean
 
 build:
