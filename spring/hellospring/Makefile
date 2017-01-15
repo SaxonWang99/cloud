@@ -8,11 +8,17 @@ compile:
 
 run:
 	echo Starting Spring at:  http://localhost:8080
-	java -jar build/libs/helloworld-1.0.0-SNAPSHOT.jar
+	java -jar build/libs/hello-rest-service-1.0.0.jar
+
+test1:
+	curl http://localhost:8080/greeting
+
+test2:
+	curl http://localhost:8080/greeting?name=User
 
 docker:
 	docker build -t hellospring .
-	docker run --name hellospring -td hellospring
+	docker run --name hellospring -td --net=host hellospring
 	docker exec -it hellospring bash 	
 
 docker-build: 

@@ -14,6 +14,7 @@
 
 		https://spring.io/guides/gs/serving-web-content/
 		https://spring.io/guides/gs/rest-service/
+		https://www.exptutorials.com/spring-hibernate-tutorials
 
 ## Docker Deployment
 

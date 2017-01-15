@@ -55,6 +55,17 @@
                                 3 Public Subnets 
                                 Keep at Initial Size
 
+    ELB Gateway:                Name:               elb-gateway
+                                VPC:                production
+                                AZ's:               2 AZ's Public
+                                Sec Group:          dmz-sec-group      
+                                Target Group:       aws-linux-1, aws-linux-2 
+                                                    (HTTP/80) | Health Check /index.html
+                                Register Targets:   add inststances from auto-scale group
+                                Listener Rules:     aws-linux-1 (/loadtest.php) | us-west-2a
+                                                    aws-linux-2 (/fibonacci.php) | us-west-2b
+
+
 ## AWS DNS (Route 53) | Creating Sub Domain
 
     http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingNewSubdomain.html
