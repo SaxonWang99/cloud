@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'jpa-map'
+	baseName = 'jpa-boot'
 	version = '1.0.0'
 }
 

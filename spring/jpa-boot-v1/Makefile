@@ -10,6 +10,6 @@ run:
 	gradle bootRun
 
 run-jar:
-	java -jar build/libs/jpa-map-1.0.0.jar
+	java -jar build/libs/jpa-boot-1.0.0.jar
 
 
