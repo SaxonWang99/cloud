@@ -2,6 +2,8 @@ all: clean
 
 clean:
 	find . -name "*.class" -exec rm -rf {} \;
+	rm -rf build/classes/*
+	rm -rf build/libs/*
 
 compile:
 	gradle build

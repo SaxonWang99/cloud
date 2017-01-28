@@ -12,6 +12,6 @@ run:
 	gradle bootRun
 
 run-jar:
-	java -jar build/libs/hellojpa-2.0.0.jar
+	java -jar build/libs/mapping-1.0.0.jar
 
 

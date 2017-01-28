@@ -1,11 +1,10 @@
 
-CREATE SCHEMA IF NOT EXISTS `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `test`;
+CREATE SCHEMA test;
 
-CREATE TABLE IF NOT EXISTS `test`.`student` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `first_name` VARCHAR(128) NOT NULL,
-  `last_name` VARCHAR(128) NOT NULL,
-  `age` INT NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+CREATE TABLE test.customer ( 
+	id                   bigint  NOT NULL  AUTO_INCREMENT,
+	first_name           varchar(255)    ,
+	last_name            varchar(255)    ,
+	CONSTRAINT pk_customer PRIMARY KEY ( id )
+ );
+
