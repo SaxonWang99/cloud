@@ -1,38 +1,20 @@
+## Spring Hibernate Tutorials
 
-## Spring Boot Resources
+	https://www.exptutorials.com/spring-hibernate-tutorials
 
-		https://projects.spring.io/spring-boot/
-		https://start.spring.io/
+In this tutorial, we will describe how to use Hibernate/JPA in Spring Boot Application to access databases. The frameworks will be used in this tutorial: Spring Boot 1.4.1, MySQL 5.7, Hibernate/JPA 5.0.1, Maven 3.2.
 
-## Spring Boot Documentation
-
-		http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/
-		https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started
-		https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto
-
-## Spring Boot Tutorials
-
-		https://spring.io/guides/gs/serving-web-content/
-		https://spring.io/guides/gs/rest-service/
-		https://www.exptutorials.com/spring-hibernate-tutorials
-
-## Docker Deployment
-
-    	https://geowarin.github.io/spring-boot-app-in-docker-image.html
-
-## Local Environment Setup
-
-		sdk ls springboot
-	    sdk install springboot 1.4.2.RELEASE
-
-	    spring --version
-	    Spring CLI v1.4.2.RELEASE
+	
+## Mapping Examples
 
 
-	    
-	    
+Mapping Entities with Tables
 
+This tutorial, we will how you how to map a object from Java to a table in Database.
 
-
-
-
+1. Hibernate/JPA Getting Started Mapping Example
+2. Hibernate/JPA Enum Type Mapping Example
+3. Hibernate/JPA One To One Relationships Mapping Example
+4. Hibernate/JPA One To Many Relationships Mapping Example
+5. Hibernate/JPA Many To Many Relationships Mapping Example
+6. Hibernate/JPA Many To Many Relationship Mapping - Join Table With Extra Columns Example
