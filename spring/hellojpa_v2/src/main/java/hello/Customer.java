@@ -19,6 +19,8 @@ public class Customer extends AbstractEntity {
 
     private String firstName ; 
     private String lastName ;
+
+    @Column(unique = true)
     private String email ;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
