@@ -1,15 +1,11 @@
 
 package hello;
 
-package com.oreilly.springdata.jpa.order;
-
 import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import org.springframework.util.Assert;
-import com.oreilly.springdata.jpa.core.AbstractEntity;
-import com.oreilly.springdata.jpa.core.Product;
 
 
 @Entity

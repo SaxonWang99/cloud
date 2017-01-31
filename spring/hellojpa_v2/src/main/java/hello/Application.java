@@ -26,22 +26,22 @@ public class Application {
 			Address jack_address = new Address( "123 Main St.", "San Francisco", "USA") ;
 			jack.add( jack_address ) ;
 			repository.save( jack );
-			//
+
 			Customer chloe = new Customer("Chloe", "O'Brian", "cloe@obrian.com") ;
 			Address chloe_address = new Address( "123 Main St.", "London", "UK") ;	
 			chloe.add ( chloe_address ) ;		
 			repository.save( chloe );
-			//
+
 			Customer kim = new Customer("Kim", "Bauer", "kim@bauer.com") ;
 			Address kim_address = new Address( "123 Main St.", "San Jose", "USA") ;	
 			kim.add( kim_address ) ;		
 			repository.save( kim );
-			//
+
 			Customer david = new Customer("David", "Palmer", "david@palmer.com") ;
 			Address david_address = new Address( "123 Main St.", "Berkeley", "USA") ;	
 			david.add( david_address ) ;			
 			repository.save( david );
-			//
+
 			Customer michelle = new Customer("Michelle", "Dessler", "michelle@dessler.com") ;
 			Address michelle_address = new Address( "456 Main St.", "London", "UK") ;	
 			michelle.add( michelle_address ) ;

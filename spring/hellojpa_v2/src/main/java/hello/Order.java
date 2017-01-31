@@ -11,9 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.springframework.util.Assert;
-import com.oreilly.springdata.jpa.core.AbstractEntity;
-import com.oreilly.springdata.jpa.core.Address;
-import com.oreilly.springdata.jpa.core.Customer;
+
 
 
 @Entity
