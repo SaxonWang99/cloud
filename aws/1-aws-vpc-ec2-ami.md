@@ -3,22 +3,27 @@
 
     http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html
     
-## Setup Key Pair for EC2 and Download PEM file
+## Create Key Pair: cmpe281-us-west-1 
 
-    $ ls -l ec2php.pem 
-    -rw-r--r--@ 1 pnguyen  staff  1692 Feb 21 18:01 ec2php.pem
+    Download                cmpe281-us-west-1.pem
+    openssl x509 -text -in  cmpe281-us-west-1.pem
+    
+## Download Key Pair PEM file
 
-    $ chmod go-r ec2php.pem 
+    $ ls -l cmpe281-us-west-1.pem 
+    -rw-r--r--@ 1 pnguyen  staff  1692 Feb 21 18:01 cmpe281-us-west-1.pem
 
-    $ ls -l ec2php.pem 
-    -rw-------@ 1 pnguyen  staff  1692 Feb 21 18:01 ec2php.pem
+    $ chmod go-r cmpe281-us-west-1.pem 
+
+    $ ls -l cmpe281-us-west-1.pem 
+    -rw-------@ 1 pnguyen  staff  1692 Feb 21 18:01 cmpe281-us-west-1.pem
 
 ## PEM Usage on Mac OS X
     
     ec2.sh:
-        ssh -i ec2php.pem ec2-user@<PUBLIC_IP> 
+        ssh -i cmpe281-us-west-1.pem ec2-user@<PUBLIC_IP> 
     scp.sh:
-        scp -i ec2php.pem $1 ec2-user@<PUBLIC_IP>:/tmp 
+        scp -i cmpe281-us-west-1.pem $1 ec2-user@<PUBLIC_IP>:/tmp 
 
     $ chmod +x *.sh
 
@@ -52,11 +57,6 @@
     Wildcard Mask =         	0.0.0.255
 
 
-## Create Key Pair: pnguyen-us-west-1
-
-    Download                pnguyen-us-west-1.pem
-    openssl x509 -text -in pnguyen-us-west-1.pem
-
     
 ## Launch EC2 Instance:
 
@@ -67,16 +67,16 @@
     Auto Assign Public IP
     Security Group: cmpe281-dmz (create new)
         Open Ports: 22, 80, 443
-    Select Key Pair: pnguyen-us-west-1
+    Select Key Pair: cmpe281-us-west-1
     AWS Instance Name:  aws-php
 
 ## Connect to EC2 Instance:
 
-    chmod 400 pnguyen-us-west-1.pem
+    chmod 400 cmpe281-us-west-1.pem
     
     Connect to your instance using its Public DNS (For Example):
     
-    ssh -i "pnguyen-us-west-1.pem" ec2-user@ec2-54-67-49-23.us-west-1.compute.amazonaws.com
+    ssh -i cmpe281-us-west-1.pem ec2-user@ec2-54-67-49-23.us-west-1.compute.amazonaws.com
 
     
 ## PHP Setup on EC2 Linux AMI:
