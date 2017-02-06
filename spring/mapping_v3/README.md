@@ -1,3 +1,4 @@
+
 ## Spring Hibernate Tutorials
 
 	https://www.exptutorials.com/spring-hibernate-tutorials
@@ -16,8 +17,12 @@
 	1. 	Hibernate/JPA Getting Started Mapping Example
 		https://www.exptutorials.com/tutorials/1/hibernate-jpa-getting-started-mapping-example
 
-	2. Hibernate/JPA Enum Type Mapping Example
-	3. Hibernate/JPA One To One Relationships Mapping Example
-	4. Hibernate/JPA One To Many Relationships Mapping Example
-	5. Hibernate/JPA Many To Many Relationships Mapping Example
-	6. Hibernate/JPA Many To Many Relationship Mapping - Join Table With Extra Columns Example
+	2. 	Hibernate/JPA Enum Type Mapping Example
+		https://www.exptutorials.com/tutorials/2/hibernate-jpa-enum-type-mapping-example
+
+	3. 	Hibernate/JPA One To One Relationships Mapping Example
+		https://www.exptutorials.com/tutorials/3/hibernate-jpa-one-to-one-relationships-mapping-example
+
+	4. 	Hibernate/JPA One To Many Relationships Mapping Example
+	5. 	Hibernate/JPA Many To Many Relationships Mapping Example
+	6. 	Hibernate/JPA Many To Many Relationship Mapping - Join Table With Extra Columns Example
