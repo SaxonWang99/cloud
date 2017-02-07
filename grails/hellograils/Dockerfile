@@ -93,7 +93,7 @@ RUN set -e \
 		exit 1; \
 	fi
 
-ADD	 ./build/libs/helloworld-1.0.war /usr/local/tomcat/webapps/helloworld.war
+ADD	 ./build/libs/hellograils-1.0.war /usr/local/tomcat/webapps/hellograils.war
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]

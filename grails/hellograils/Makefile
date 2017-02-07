@@ -2,6 +2,8 @@ all: clean
 
 clean:
 	find . -name "*.class" -exec rm -rf {} \;
+	rm -f build/libs/*
+	rm -f *.db
 
 compile:
 	grails compile
@@ -15,7 +17,7 @@ run:
 
 run-boot:
 	echo Starting Grails at:  http://localhost:8080
-	java -jar build/libs/helloworld-1.0.war
+	java -jar build/libs/hellograils-1.0.war
 
 docker:
 	docker build -t hellograils .
