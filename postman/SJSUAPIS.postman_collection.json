@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "SANDBOX",
+		"name": "SJSUAPIS",
 		"_postman_id": "f721693c-2feb-76c5-7277-bf35b0beef99",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -495,6 +495,92 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n  \"subject\": \"RE: Message to Self\",\n  \"content\": \"Hello There!\",\n  \"status\": \"Received\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quickpoll",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Poll",
+					"request": {
+						"url": "http://localhost:8080/polls",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question\": \"Who will win SuperBowl this year?\",\n    \"options\": [\n                       {\"value\": \"New England Patriots\"},\n                       {\"value\": \"Seattle Seahawks\"},\n                       {\"value\": \"Green Bay Packers\"},\n                       {\"value\": \"Denver Broncos\"}]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Polls",
+					"request": {
+						"url": "http://localhost:8080/polls",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Vote",
+					"request": {
+						"url": "http://localhost:8080/polls/1/votes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"option\" : { \"id\" : 1, \"value\" : \"New England Patriots\" }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Poll Result",
+					"request": {
+						"url": "http://localhost:8080/computeresult?pollId=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"option\" : { \"id\" : 1, \"value\" : \"New England Patriots\" }\n}"
 						},
 						"description": ""
 					},
