@@ -15,6 +15,10 @@ run:
 	echo Starting Grails at:  http://localhost:8080
 	grails run-app
 
+run-test: 
+	echo Starting Grails at:  http://localhost:8080
+	grails test run-app	
+
 run-boot:
 	echo Starting Grails at:  http://localhost:8080
 	java -jar build/libs/hellorest-1.0.war

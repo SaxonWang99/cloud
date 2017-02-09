@@ -11,7 +11,6 @@ class UrlMappings {
         put "/$controller/$id(.$format)?"(action:"update")
         patch "/$controller/$id(.$format)?"(action:"patch")
 
-        //tag::productMapping[]
         "/products"(resources:"product") {
             collection {
                 '/search'(controller:'product', action:'search')
