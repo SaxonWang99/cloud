@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "SJSUAPIS",
+		"name": "RESTAPIS",
 		"_postman_id": "f721693c-2feb-76c5-7277-bf35b0beef99",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"

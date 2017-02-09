@@ -1,9 +1,8 @@
 ## Grails Resources
 
 		http://docs.grails.org/latest/
-		http://guides.grails.org/creating-your-first-grails-app/guide/index.html
-		https://github.com/grails-guides/creating-your-first-grails-app
-
+		http://guides.grails.org/
+		
 
 ## Local Environment Setup
 
@@ -46,22 +45,15 @@
 ## Grails Console
 
 	grails console
-	
+	grails test console
+
 	---
 	
-	import hellograils.Vehicle 
+	import gumball.v1.Gumball 
 	
-	def vehicles = Vehicle.list()
-	println vehicles.size()
-
-	def pickup = Vehicle.findByName("Pickup")
-	println pickup.name
-	println pickup.make.name
-	println pickup.model.name
-
-	def nissan = Make.findByName("Nissan")
-	def nissans = Vehicle.findAllByMake(nissan)
-	println nissans.size()
-
+ 	def gumball = Gumball.findBySerialNumber( "1234998871109" )
+ 	println gumball.modelNumber
+ 	println gumball.countGumballs
+ 	println gumball.serialNumber
 
 

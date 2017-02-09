@@ -1,7 +1,10 @@
+
 ## Grails Resources
 
 		http://docs.grails.org/latest/
 		http://guides.grails.org/creating-your-first-grails-app/guide/index.html
+		http://guides.grails.org/rest-hibernate/guide/index.html
+		
 
 ## Docker Deployment
 
@@ -36,7 +39,12 @@
 	 
 	grails create-app hellograils
 	grails create-app gumball-v1
+	grails create-app gumball-v2
+
 	grails create-app hellorest -profile rest-api
+	grails create-app books-api -profile rest-api
+	grails create-app gumball-api -profile rest-api
+
 	 
 
 
