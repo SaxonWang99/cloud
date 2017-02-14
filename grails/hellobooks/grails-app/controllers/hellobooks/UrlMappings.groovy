@@ -1,4 +1,4 @@
-package hellorest
+package hellobooks
 
 class UrlMappings {
 
@@ -10,12 +10,6 @@ class UrlMappings {
         post "/$controller(.$format)?"(action:"save")
         put "/$controller/$id(.$format)?"(action:"update")
         patch "/$controller/$id(.$format)?"(action:"patch")
-
-        "/api"(resources:"product") {
-            collection {
-                '/search'(controller:'api', action:'search')
-            }
-        }
 
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')

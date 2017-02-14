@@ -42,8 +42,8 @@
 	grails create-app gumball-v2
 
 	grails create-app hellorest -profile rest-api
-	grails create-app books-api -profile rest-api
-	grails create-app gumball-api -profile rest-api
+	grails create-app hellobooks -profile rest-api
+	grails create-app gumballapi -profile rest-api
 
 	 
 

@@ -27,8 +27,10 @@
 ## Grails Commands
 	 
 	grails create-domain-class Product	
-	grails create-restful-controller Product
-	grails create-unit-test ProductController
+	grails create-domain-class Vendor
+
+	grails create-restful-controller API
+	grails create-unit-test APIController
 	
 	grails run-app
 	grails run-app --port=8090

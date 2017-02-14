@@ -4,10 +4,10 @@ package hellorest
 import grails.rest.*
 import grails.converters.*
 
-class ProductController extends RestfulController {
+class APIController extends RestfulController {
     static responseFormats = ['json', 'xml']
 
-    ProductController() {
+    APIController() {
         super(Product)
     }
 
@@ -22,7 +22,6 @@ class ProductController extends RestfulController {
 	        respond([]) 
 	    }
 	}
- 
+
+
 }
-
-
