@@ -11,9 +11,25 @@ class UrlMappings {
         put "/$controller/$id(.$format)?"(action:"update")
         patch "/$controller/$id(.$format)?"(action:"patch")
 
-        "/api"(resources:"product") {
-            collection {
-                '/search'(controller:'api', action:'search')
+        /* Simple Mappings */
+        /*
+        get "/data"(controller: 'API', action:'data')
+        get "/search"(controller: 'API', action:'search')
+        "/api/$sku?"(controller: "API", parseRequest: true) {
+            action = [GET: "index", PUT: "update", DELETE: "delete", POST: "save"]
+        }
+        */
+
+        /* Resource Driven Mappings */
+        group "/api", {
+            get "/data"(controller: 'API', action:'data')
+            group "/vendor", {
+                get "/search"(controller: 'API', action:'search')
+            }            
+            group "/product", {
+                "/$sku?"(controller: "API", parseRequest: true) {
+                    action = [GET: "index", PUT: "update", DELETE: "delete", POST: "save"]
+                }
             }
         }
 

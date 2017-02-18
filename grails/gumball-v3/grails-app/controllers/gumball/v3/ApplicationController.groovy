@@ -1,4 +1,4 @@
-package gumballapi
+package gumball.v3
 
 import grails.core.GrailsApplication
 import grails.util.Environment

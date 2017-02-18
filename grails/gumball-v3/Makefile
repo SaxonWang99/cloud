@@ -21,7 +21,7 @@ run-test:
 
 run-boot:
 	echo Starting Grails at:  http://localhost:8080
-	java -jar build/libs/gumball-v2-2.0.war
+	java -jar build/libs/gumball-v3-3.0.war
 
 docker:
 	docker build -t gumball .

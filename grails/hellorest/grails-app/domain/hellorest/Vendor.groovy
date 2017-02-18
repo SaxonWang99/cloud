@@ -2,6 +2,13 @@ package hellorest
 
 class Vendor {
 
-    static constraints = {
-    }
+	String name
+	String stockSymbol
+	String websiteURL
+	
+    static constraints = { 
+		stockSymbol unique: true
+	}
+
+	static hasMany = [ products:Product ]
 }

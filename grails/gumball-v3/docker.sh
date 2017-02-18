@@ -4,7 +4,7 @@
 
 ACCOUNT=""
 CONTAINER=""gumball"
-VERSION="v2.0"
+VERSION="v3.0"
 
 # Shell Variables
 

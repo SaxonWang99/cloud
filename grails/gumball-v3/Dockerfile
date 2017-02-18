@@ -93,7 +93,7 @@ RUN set -e \
 		exit 1; \
 	fi
 
-ADD	 ./build/libs/gumball-v2-2.0.war /usr/local/tomcat/webapps/gumball.war
+ADD	 ./build/libs/gumball-v3-3.0.war /usr/local/tomcat/webapps/gumball.war
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]

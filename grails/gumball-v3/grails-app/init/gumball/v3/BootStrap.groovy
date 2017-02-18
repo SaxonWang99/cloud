@@ -1,4 +1,4 @@
-package gumballapi
+package gumball.v3
 
 class BootStrap {
 

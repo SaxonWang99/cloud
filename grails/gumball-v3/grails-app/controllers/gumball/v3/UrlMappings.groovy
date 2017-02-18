@@ -1,4 +1,4 @@
-package gumballapi
+package gumball.v3
 
 class UrlMappings {
 
@@ -9,6 +9,13 @@ class UrlMappings {
         post "/$controller(.$format)?"(action:"save")
         put "/$controller/$id(.$format)?"(action:"update")
         patch "/$controller/$id(.$format)?"(action:"patch")
+
+
+        "/order/$id?"(controller: "GumballRest", parseRequest: true) {
+            action = [GET: "orderStatus", POST: "placeOrder"]
+        }
+
+        get "/gumball"(controller: 'GumballRest', action:'machineStatus')
 
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')

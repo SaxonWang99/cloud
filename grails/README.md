@@ -40,10 +40,11 @@
 	grails create-app hellograils
 	grails create-app gumball-v1
 	grails create-app gumball-v2
-
+	grails create-app gumball-v3 -profile rest-api
+	
 	grails create-app hellorest -profile rest-api
 	grails create-app hellobooks -profile rest-api
-	grails create-app gumballapi -profile rest-api
+
 
 	 
 
