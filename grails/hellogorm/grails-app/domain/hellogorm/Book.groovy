@@ -21,3 +21,18 @@ class Book {
     }
 }
 
+
+/*
+
+SQL DDL:
+
+    create table book (
+        id bigint not null auto_increment,
+        version bigint not null,
+        isbn varchar(255) not null,
+        release_date datetime not null,
+        title varchar(255) not null,
+        primary key (id)
+    ) ENGINE=InnoDB
+
+*/

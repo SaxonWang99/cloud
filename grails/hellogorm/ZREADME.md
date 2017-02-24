@@ -32,7 +32,12 @@
 	grails create-domain-class Face2	
 	grails create-domain-class Nose2	
 
-	grails create-domain-class XXX	
+	grails create-domain-class Person1	
+	grails create-domain-class Person2	
+
+	grails create-domain-class Author1
+	grails create-domain-class Book1
+
 
 	grails run-app
 	grails run-app --port=8090
