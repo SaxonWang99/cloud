@@ -23,8 +23,10 @@
 	    
 ## Grails Commands
 	 
+	// Table and Column Mappings
 	grails create-domain-class Book
 
+	// Many-to-One and One-to-One
 	grails create-domain-class Face0	
 	grails create-domain-class Nose0	
 	grails create-domain-class Face1	
@@ -32,12 +34,35 @@
 	grails create-domain-class Face2	
 	grails create-domain-class Nose2	
 
+	// Association Types
 	grails create-domain-class Person1	
 	grails create-domain-class Person2	
 
+	// One-to-Many
 	grails create-domain-class Author1
 	grails create-domain-class Book1
 
+	// Multiple One-to-Many
+	grails create-domain-class Airport1
+	grails create-domain-class Flight1
+	grails create-domain-class Airport2
+	grails create-domain-class Flight2
+
+	// Many-to-Many
+	grails create-domain-class Author2
+	grails create-domain-class Book2	
+
+	// Basic Collection Types
+	grails create-domain-class Person3
+
+	// Composition in GORM
+	grails create-domain-class Person4
+	grails create-domain-class Address4
+
+	// Inheritance in GORM
+	grails create-domain-class Content
+	grails create-domain-class BlogEntry
+	grails create-domain-class PodCast
 
 	grails run-app
 	grails run-app --port=8090
@@ -59,22 +84,7 @@
 	grails console
 	grails test console
 
-## MySQL Schema
 
-CREATE TABLE gumball (
-  id bigint(20) NOT NULL AUTO_INCREMENT,
-  version bigint(20) NOT NULL,
-  count_gumballs int(11) NOT NULL,
-  model_number varchar(255) NOT NULL,
-  serial_number varchar(255) NOT NULL,
-  PRIMARY KEY (id),
-  UNIQUE KEY serial_number (serial_number)
-) ;
-
-insert into gumball ( id, version, count_gumballs, model_number, serial_number ) 
-values ( 1, 0, 1000, 'M102988', '1234998871109' ) ;
-
-select * from gumball ;
 
 
 
