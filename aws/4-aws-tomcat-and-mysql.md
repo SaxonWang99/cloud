@@ -117,7 +117,7 @@
 	DB Instance Class:	db.t2.micro
 	Multi-AZ?:				No
 	Storage:				SSD / 5GB
-	DB Instance ID:		CMPE281
+	DB Instance ID:		    CMPE281
 	Master User Name:		admin
 	Master Password:		cmpe281#2017
 	
@@ -125,7 +125,7 @@
 	Subnet:					New DB Subnet
 	Public Access:			Yes
 	AZ:						us-west-1a
-	Security Group:		New Sec Group
+	Security Group:		    New Sec Group
 	DB Name:				CMPE281
 	Auto Backups:			Off (Zero Days Retention)
 
