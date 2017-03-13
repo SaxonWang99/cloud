@@ -9,8 +9,8 @@
 
 ## Support & Documentation
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+	Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
+	To watch some training videos, visit http://www.youtube.com/user/c9ide
 
 ## Cloud9 Workspace Update
 
@@ -20,6 +20,7 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 	nvm use 6.10.0
 	nvm alias default 6.10.0 (set defaut for workspace)
 	nvm ls
+	node -v
 
 ## Cloud9 Web Frameworks
 
@@ -33,7 +34,7 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 
 ## A Simple Node.js HTTP Server
 
-Once you're in Cloud9, create a new file called server.js. Type the following code in the file:
+	Once you're in Cloud9, create a new file called server.js. Type the following code in the file:
 
 	var http = require('http');
 	http.createServer(function (req, res) {
