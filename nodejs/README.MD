@@ -22,7 +22,7 @@
 	nvm ls
 	node -v
 	
-## Installating Node Packages
+## Installing Node Packages
 
 	https://docs.npmjs.com/getting-started/installing-npm-packages-locally
 	npm install async
