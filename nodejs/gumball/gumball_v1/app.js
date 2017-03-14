@@ -13,7 +13,8 @@ Serial# 1234998871109
 
 **/
 
-var endpoint = "http://52.9.120.14:8080/GrailsGumballMachineVer2-2.0/gumballs/1";
+var endpoint = "http://api.paulnguyen.org:8181/gumball/";
+var order_endpoint = "http://api.paulnguyen.org:8181/order/" ;
 
 var fs = require('fs');
 var express = require('express');
@@ -24,7 +25,7 @@ app.use(express.bodyParser());
 app.use("/images", express.static(__dirname + '/images'));
 
 var page = function( req, res, state ) {
-    body = fs.readFileSync('./gumball.html');
+    var body = fs.readFileSync('./gumball.html');
     res.setHeader('Content-Type', 'text/html');
     res.writeHead(200);
 
@@ -59,7 +60,7 @@ var order = function(req, res) {
                         data: {  "countGumballs": count },
                         headers:{"Content-Type": "application/json"} 
                     };
-                    client.put( endpoint, args,
+                    client.put( order_endpoint, args,
                         function(data, response_raw) {
                             console.log(data);
                             page( req, res, "no-coin" ) ;
