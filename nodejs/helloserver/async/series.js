@@ -1,10 +1,12 @@
 
+/*  npm install async */
+
 var async = require("async") ;
 
 async.series({
     one: function(c){
         console.log ( "1" ) ; 
-        c("error", "hello") ; // call two
+        c(null, "hello") ; // call two
     },
     two: function(c){
         console.log ( "2" ) ; 

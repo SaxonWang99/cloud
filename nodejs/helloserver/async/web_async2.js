@@ -6,12 +6,12 @@ var count = "";
 
 function request_handler (req, res) {
     var client = new Client();
-            client.get("http://pnguyen-gumball-v2.elasticbeanstalk.com/gumballs", function(data, response_raw){
-                console.log(data[0].id) ;
-                console.log(data[0].countGumballs) ;
-                console.log(data[0].modelNumber) ;
-                console.log(data[0].serialNumber) ;
-                count = data[0].countGumballs
+            client.get("http://api.paulnguyen.org:8181/gumball/", function(data, response_raw){
+                console.log(data.id) ;
+                console.log(data.countGumballs) ;
+                console.log(data.modelNumber) ;
+                console.log(data.serialNumber) ;
+                count = data.countGumballs
                 console.log( "count = " + count ) ;
                 res.end( "count = " + count + "\n");
             });

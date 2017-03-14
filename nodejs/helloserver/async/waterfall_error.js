@@ -1,8 +1,11 @@
+
+/*  npm install async */
+
 var async = require("async") ;
 
 async.waterfall([
     function(c){
-        c( null, "a" ) ; // "a" is pass as arg1       
+        c( "error", "a" ) ; // "a" is pass as arg1       
     },
     function(arg1, c){
         console.log( "arg1 = " + arg1 ) ;
