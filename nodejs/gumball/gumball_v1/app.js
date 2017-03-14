@@ -14,7 +14,6 @@ Serial# 1234998871109
 **/
 
 var endpoint = "http://api.paulnguyen.org:8181/gumball/";
-var order_endpoint = "http://api.paulnguyen.org:8181/order/" ;
 
 var fs = require('fs');
 var express = require('express');
@@ -60,7 +59,7 @@ var order = function(req, res) {
                         data: {  "countGumballs": count },
                         headers:{"Content-Type": "application/json"} 
                     };
-                    client.put( order_endpoint, args,
+                    client.put( endpoint, args,
                         function(data, response_raw) {
                             console.log(data);
                             page( req, res, "no-coin" ) ;
