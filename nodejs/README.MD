@@ -21,6 +21,13 @@
 	nvm alias default 6.10.0 (set defaut for workspace)
 	nvm ls
 	node -v
+	
+## Installating Node Packages
+
+	https://docs.npmjs.com/getting-started/installing-npm-packages-locally
+	npm install async
+	npm install express
+	npm install (used package.json)
 
 ## Cloud9 Web Frameworks
 
