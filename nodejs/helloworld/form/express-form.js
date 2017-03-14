@@ -2,7 +2,7 @@
 //  https://github.com/senchalabs/connect#middleware
 //  https://github.com/expressjs/body-parser
 //
-//  npm install body-parser
+//  npm install (package.json)
 
 var express = require('express');
 var app = express();

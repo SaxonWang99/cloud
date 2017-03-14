@@ -1,29 +1,27 @@
+
+/*  npm install node-rest-client */
+
 var Client = require('node-rest-client').Client;
 var http = require('http') ;
 
 function request_handler (req, res) {
 
-    res.writeHead( 200, {
-        'Content-Type' : "text/plain",
-        'Content-Length' : content_length
-    }) ;
-
     var client = new Client();
             var count = "";
-            client.get("http://pnguyen-grails-gumball-v2.cfapps.io/gumballs", function(data, response_raw){
+            client.get("http://api.paulnguyen.org:8181/gumball/", function(data, response_raw){
                 // parsed response body as js object
                 console.log(data);
                 // raw response
-                //console.log(response_raw);
+                console.log(response_raw);
                 // just the properties we need
-                console.log(data[0].id) ;
-                console.log(data[0].countGumballs) ;
-                console.log(data[0].modelNumber) ;
-                console.log(data[0].serialNumber) ;
-                count = data[0].countGumballs
+                console.log(data.id) ;
+                console.log(data.countGumballs) ;
+                console.log(data.modelNumber) ;
+                console.log(data.serialNumber) ;
+                count = data.countGumballs
                 console.log( "count = " + count ) ;
             });
-    res.end(body);
+    res.end();
 }
 
 var s = http.createServer(request_handler) ;

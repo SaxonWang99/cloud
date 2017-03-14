@@ -1,4 +1,6 @@
 
+/*  npm install express */
+
 var express = require('express');
 var app = express();
 
@@ -15,3 +17,5 @@ app.get("*", function (req, res) {
 });
 
 app.listen(8080);
+
+// Test with:  curl -X GET -i localhost:8080/users/paul

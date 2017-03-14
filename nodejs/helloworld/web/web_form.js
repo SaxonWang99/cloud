@@ -29,10 +29,10 @@ function handler(req, res){
 };
 
 
-http.createServer(handler).listen(8080, function(err){
+http.createServer(handler).listen(process.env.PORT, process.env.IP, function(err){
   if(err){
     console.log('Error starting http server');
   } else {
-    console.log('Server listening on port 8080');
+    console.log('Server ' + process.env.IP + ' listening on port ' + process.env.PORT);
   };
 });

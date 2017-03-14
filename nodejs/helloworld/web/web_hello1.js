@@ -3,7 +3,7 @@ var http = require('http') ;
 var s = http.createServer(
     function(req,res) {
         console.log( "I got a request" ) ;
-        res.end( "Hey, tanks for calling!\n") ;     
+        res.end( "Hey, thanks for calling!\n") ;     
     }
 ) ;
 s.listen(8080) ;
