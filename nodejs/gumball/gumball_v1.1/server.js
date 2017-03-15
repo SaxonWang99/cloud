@@ -9,6 +9,8 @@ var Client  = require('node-rest-client').Client;
  * Gumball Handlers
  */
 
+var endpoint = "http://api.paulnguyen.org:8181/gumball/";
+
 var page = function( req, res, state ) {
     var body = fs.readFileSync('./gumball.html');
     res.setHeader('Content-Type', 'text/html');
@@ -16,7 +18,7 @@ var page = function( req, res, state ) {
 
     var client = new Client();
             var count = "";
-            client.get("http://pnguyen-gumball-v2.elasticbeanstalk.com/gumballs/1", 
+            client.get( endpoint, 
                 function(data, response_raw){
                     console.log(data);
                     count = data.countGumballs
