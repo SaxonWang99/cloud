@@ -301,10 +301,14 @@ Port:   43220
 Login:  user
 Passwd: pwd
 
+-- MongoDB (Localhost) Connection
+
 Host:   localhost
 Port:   27017
 
 -- Add Mongodb Admin User
+
+See:  https://docs.mongodb.com/manual/tutorial/enable-authentication/
 
 use admin
 db.addUser('cmpe281', 'cmpe281');

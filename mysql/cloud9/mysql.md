@@ -11,6 +11,8 @@
 
     MySQL 5.5 database added.  Please make note of these credentials:
 
+## MySQL DB Admin User
+
     Root User: username  (your cloud9 account - i.e. paulnguyen)
     Database Name: c9
 
