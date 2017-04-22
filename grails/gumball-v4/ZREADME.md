@@ -18,7 +18,10 @@
 		| JVM Version: 1.8.0_112
 		
 	    
-frfwffrt=8090
+## Grails Commands
+
+	grails run-app
+	grails run-app --port=8090
 	grails test run-app
 	
 	grails test-app
@@ -37,22 +40,17 @@ frfwffrt=8090
 	grails console
 	grails test console
 
-## MySQL Setup
+## Grails Multi-Tenant
 
-CREATE TABLE gumball (
-  id bigint(20) NOT NULL AUTO_INCREMENT,
-  version bigint(20) NOT NULL,
-  count_gumballs int(11) NOT NULL,
-  model_number varchar(255) NOT NULL,
-  serial_number varchar(255) NOT NULL,
-  PRIMARY KEY (id),
-  UNIQUE KEY serial_number (serial_number)
-) ;
+	http://gorm.grails.org/6.0.x/hibernate/manual/#multiTenancy
+	
+	grails create-app gumball-v4 -profile rest-api
+	grails create-domain-class Gumball
+	grails create-domain-class GumballOrder
+	grails create-restful-controller GumballRest
 
-insert into gumball ( id, version, count_gumballs, model_number, serial_number ) 
-values ( 1, 0, 1000, 'M102988', '1234998871109' ) ;
-
-select * from gumball ;
+	
+	
 
 
 
