@@ -11,6 +11,7 @@
     https://tour.golang.org/
     https://golang.org/doc/effective_go.html
     https://github.com/golang/go
+    https://cloud.google.com/appengine/docs/standard/go/quickstart
 
 ## Book:
 
