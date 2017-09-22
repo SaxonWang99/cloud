@@ -34,7 +34,7 @@ docker-build:
 	docker images
 
 docker-run:
-	docker run --name goapi -td --net=host goapi
+	docker run --name goapi -td -p 3000:3000 goapi
 	docker ps
 
 docker-network:
