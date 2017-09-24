@@ -3,8 +3,8 @@
 # Container
 
 ACCOUNT=""
-CONTAINER="goapi"
-VERSION="v1.0"
+CONTAINER="gumball"
+VERSION="goapi-v1.0"
 
 # Shell Variables
 
