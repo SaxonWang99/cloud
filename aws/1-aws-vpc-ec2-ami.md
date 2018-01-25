@@ -1,15 +1,20 @@
 
 # Setup PHP on AWS EC2 Instance
 
+```
     http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html
-    
+```
+
 ## Create Key Pair: cmpe281-us-west-1 
 
+```
     Download                cmpe281-us-west-1.pem
     openssl x509 -text -in  cmpe281-us-west-1.pem
-    
+```
+
 ## Download Key Pair PEM file
 
+```
     $ ls -l cmpe281-us-west-1.pem 
     -rw-r--r--@ 1 pnguyen  staff  1692 Feb 21 18:01 cmpe281-us-west-1.pem
 
@@ -17,19 +22,22 @@
 
     $ ls -l cmpe281-us-west-1.pem 
     -rw-------@ 1 pnguyen  staff  1692 Feb 21 18:01 cmpe281-us-west-1.pem
+```
 
 ## PEM Usage on Mac OS X
-    
+
+```    
     ec2.sh:
         ssh -i cmpe281-us-west-1.pem ec2-user@<PUBLIC_IP> 
     scp.sh:
         scp -i cmpe281-us-west-1.pem $1 ec2-user@<PUBLIC_IP>:/tmp 
 
     $ chmod +x *.sh
-
+```
 
 ## Create VPC:  cmpe281 (Using Wizard)
 
+```
     - Public with Private Subnets
 
     Creates:  A /16 network with two /24 subnets. 
@@ -55,11 +63,12 @@
     Broadcast =             	10.0.1.255
     Netmask =               	255.255.255.0
     Wildcard Mask =         	0.0.0.255
-
+```
 
     
 ## Launch EC2 Instance:
 
+```
     Amazon Linux AMI 
     T2 Micro Instance
     VPC: cmpe281
@@ -69,18 +78,21 @@
         Open Ports: 22, 80, 443
     Select Key Pair: cmpe281-us-west-1
     AWS Instance Name:  aws-php
+```
 
 ## Connect to EC2 Instance:
 
+```
     chmod 400 cmpe281-us-west-1.pem
     
     Connect to your instance using its Public DNS (For Example):
     
     ssh -i cmpe281-us-west-1.pem ec2-user@ec2-54-67-49-23.us-west-1.compute.amazonaws.com
-
+```
     
 ## PHP Setup on EC2 Linux AMI:
 
+```
     1. Update Yum and Install LAMP Stack
 
     sudo yum update -y
@@ -101,10 +113,11 @@
     sudo chmod 2775 /var/www
     find /var/www -type d -exec sudo chmod 2775 {} \;
     find /var/www -type f -exec sudo chmod 0664 {} \;
-
+```
 
 ## PHP Test
 
+```
     1. Hello LAMP / PHP
 
     echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
@@ -133,12 +146,14 @@
         --vm-bytes 128M : Malloc 128MB per vm worker (default is 256MB)
         -t 10s : Timeout after ten seconds
         -v : Be verbose
+```
 
 ## Create PHP AMI Image
 
+```
 	1. Create aws-php-ami
 	2. From aws-php (EC2 instance)
-
+```
 	
 
 

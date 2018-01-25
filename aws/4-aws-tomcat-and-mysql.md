@@ -1,5 +1,6 @@
 ### Installing Java 8 and Tomcat 7 on AWS
 
+```
 	REF:  https://readlearncode.com/cloud/amazon-free-usage-tier-installing-tomcat-7-on-an-ec2-linux-instance/
 	
 	Step 1: 	Launch EC2 Free-Tier Instance
@@ -108,10 +109,11 @@
 				mysql> create database cmpe281 ;
 				mysql> use cmpe281;
 				mysql> show tables ;
-
+```
 
 ### (Optional) Using MySQL RDS instead of Local MySQL Instance
 
+```
 	AWS RDS Dev/Test (Free Tier)
 	
 	DB Instance Class:	db.t2.micro
@@ -131,4 +133,4 @@
 
 	mysql --user=admin --password --host=<RDS MySQL Host>
 				
-				
+```
