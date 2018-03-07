@@ -134,8 +134,8 @@ docker push paulnguyen/restapi:latest ;
 1.  Create new Docker Cloud Service
 2.  Select Docker Images from your Docker Hub 
 3.  Select Docker Image (i.e. paulnguyen/restapi)
-4.	Select Docker Image Tag (i.e. latest)
-5.	Assign Service Name (i.e. restapi)
+4.  Select Docker Image Tag (i.e. latest)
+5.  Assign Service Name (i.e. restapi)
 6.  Map Bridge Network Port 8080 to 80
 7.  Create & Deploy 
 ```
