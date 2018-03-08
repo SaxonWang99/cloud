@@ -1,7 +1,7 @@
 
 # Docker - Hello World with Restlet
 
-```
+
 DOC:	https://docs.docker.com/edge/engine/reference/commandline/docker/
         https://docs.docker.com/edge/engine/reference/commandline/build/
         https://docs.docker.com/edge/engine/reference/commandline/images/
@@ -9,9 +9,8 @@ DOC:	https://docs.docker.com/edge/engine/reference/commandline/docker/
         https://docs.docker.com/edge/engine/reference/commandline/ps/
         https://docs.docker.com/edge/engine/reference/commandline/push/
 
-SRC:
-        https://github.com/paulnguyen/cmpe281/tree/master/restlet
-```
+SRC:	https://github.com/paulnguyen/cmpe281/tree/master/restlet
+
 
 ## Docker Build
 
