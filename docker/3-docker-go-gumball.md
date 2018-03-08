@@ -266,31 +266,31 @@ make docker-ps-ports
 ## Setup RabbitMQ Queue for Gumball API
 
 ```
-	-- RabbitMQ Setup
-	-- Default User/Pass: guest/guest
+-- RabbitMQ Setup
+-- Default User/Pass: guest/guest
 
 	http://localhost:8080
 
-	-- RabbitMQ Create Queue:  
+-- RabbitMQ Create Queue:  
 
-		Queue Name: gumball
-		Durable:	no
+	Queue Name: gumball
+	Durable:	no
 ```
 
 ## Setup MongoDB Database
 
 ```
-	-- Gumball MongoDB Create Database
+-- Gumball MongoDB Create Database
 
-		Database Name: cmpe281
-		Collection Name: gumball
+	Database Name: cmpe281
+	Collection Name: gumball
 
-  	-- Gumball MongoDB Collection (Create Document) --
+-- Gumball MongoDB Collection (Create Document)
 
 	use cmpe281
 	show dbs
-	
-    db.gumball.insert(
+
+	db.gumball.insert(
 	    { 
 	      Id: 1,
 	      CountGumballs: NumberInt(202),
@@ -299,9 +299,9 @@ make docker-ps-ports
 	    }
 	) ;
 
-    -- Gumball MongoDB Collection - Find Gumball Document --
+-- Gumball MongoDB Collection - Find Gumball Document
 
-    db.gumball.find( { Id: 1 } ) ;
+	db.gumball.find( { Id: 1 } ) ;
 
 ```
 
