@@ -2,9 +2,7 @@
 
 # Docker - Java Restlet Starbucks API 
 
-```
-SRC:  https://github.com/paulnguyen/cmpe281/tree/master/restlet/starbucks_v1
-```
+* https://github.com/paulnguyen/cmpe281/tree/master/restlet/starbucks_v1
 
 
 ## PART I - Setup

@@ -2,9 +2,9 @@
 
 # Docker - Java Restlet Gumball API
 
-```
-SRC:  https://github.com/paulnguyen/cmpe281/tree/master/restlet/gumball
-```
+
+* https://github.com/paulnguyen/cmpe281/tree/master/restlet/gumball
+
 
 ## Makefile
 
