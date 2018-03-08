@@ -69,31 +69,31 @@ docker-ps-ports:
 	 docker ps --all --format "table {{.Names}}\t{{.Ports}}\t"
 
 test-ping:
-	curl localhost:3000/ping
+	curl localhost:9000/ping
 
 test-get-inventory:
-	curl localhost:3000/gumball
+	curl localhost:9000/gumball
 
 test-update-inventory:
 	curl -X PUT \
-  	http://localhost:3000/gumball \
+  	http://localhost:9000/gumball \
   	-H 'Content-Type: application/json' \
   	-d '{ \
   		"CountGumballs": 1000 }' 
 
 test-place-order:
 	curl -X POST \
-  	http://localhost:3000/order \
+  	http://localhost:9000/order \
   	-H 'Content-Type: application/json'
 
 test-order-status:
 	curl -X GET \
-  	http://localhost:3000/order \
+  	http://localhost:9000/order \
   	-H 'Content-Type: application/json'
 
 test-process-order:
 	curl -X POST \
-  	http://localhost:3000/orders \
+  	http://localhost:9000/orders \
   	-H 'Content-Type: application/json'
  
 up:

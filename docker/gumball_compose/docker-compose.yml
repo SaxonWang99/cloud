@@ -4,7 +4,7 @@ services:
   gumball:
     image: paulnguyen/gumball
     ports:
-      - "3000:3000"
+      - "9000:3000"
     networks:
       - webnet
   rabbitmq:
