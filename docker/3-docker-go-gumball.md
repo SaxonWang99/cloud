@@ -110,3 +110,270 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/orders", gumballProcessOrdersHandler(formatter)).Methods("POST")
 }
 ```
+
+## Go API Backend Setup
+
+```
+
+/*
+
+	-- RabbitMQ Setup
+	-- Default User/Pass: guest/guest
+
+	http://localhost:8080
+
+	-- RabbitMQ Create Queue:  
+
+		Queue Name: gumball
+		Durable:	no
+
+	-- Gumball MongoDB Create Database
+
+		Database Name: cmpe281
+		Collection Name: gumball
+
+  	-- Gumball MongoDB Collection (Create Document) --
+
+	use cmpe281
+	show dbs
+	
+    db.gumball.insert(
+	    { 
+	      Id: 1,
+	      CountGumballs: NumberInt(202),
+	      ModelNumber: 'M102988',
+	      SerialNumber: '1234998871109' 
+	    }
+	) ;
+
+    -- Gumball MongoDB Collection - Find Gumball Document --
+
+    db.gumball.find( { Id: 1 } ) ;
+
+    {
+        "_id" : ObjectId("54741c01fa0bd1f1cdf71312"),
+        "Id" : 1,
+        "CountGumballs" : 202,
+        "ModelNumber" : "M102988",
+        "SerialNumber" : "1234998871109"
+    }
+
+    -- Gumball MongoDB Collection - Update Gumball Document --
+
+    db.gumball.update( 
+        { Id: 1 }, 
+        { $set : { CountGumballs : NumberInt(10) } },
+        { multi : false } 
+    )
+
+    -- Gumball Delete Documents
+
+    db.gumball.remove({})
+
+ ```
+
+# Go Gumball API Makefile
+
+```
+build:
+	go build gumball
+
+start:
+	./gumball 
+
+docker-build: 
+	docker build -t gumball .
+	docker images
+
+rabbitmq-run:
+	docker run --name rabbitmq \
+			   -p 8080:15672 -p 4369:4369 -p 5672:5672 \
+			   -d rabbitmq:3-management
+mongodb-run:
+	docker run --name mongodb -p 27017:27017 -d mongo:3.7
+
+docker-run:
+	docker run \
+	  		--link mongodb:mongodb \
+            --link rabbitmq:rabbitmq \
+			--name gumball -p 3000:3000 -td gumball
+	docker ps
+
+docker-network:
+	docker network ls
+
+docker-network-inspect:
+	docker network inspect host
+
+docker-shell:
+	docker exec -it gumball bash 
+
+docker-clean:
+	docker stop mongodb
+	docker stop rabbitmq
+	docker rm mongodb
+	docker rm rabbitmq
+	docker stop gumball
+	docker rm gumball
+	docker rmi gumball
+
+docker-ps:
+	 docker ps --all --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t"
+
+docker-ps-ports:
+	 docker ps --all --format "table {{.Names}}\t{{.Ports}}\t"
+
+test-ping:
+	curl localhost:3000/ping
+
+test-get-inventory:
+	curl localhost:3000/gumball
+
+test-update-inventory:
+	curl -X PUT \
+  	http://localhost:3000/gumball \
+  	-H 'Content-Type: application/json' \
+  	-d '{ \
+  		"CountGumballs": 1000 }' 
+
+test-place-order:
+	curl -X POST \
+  	http://localhost:3000/order \
+  	-H 'Content-Type: application/json'
+
+test-order-status:
+	curl -X GET \
+  	http://localhost:3000/order \
+  	-H 'Content-Type: application/json'
+
+test-process-order:
+	curl -X POST \
+  	http://localhost:3000/orders \
+  	-H 'Content-Type: application/json'
+```
+
+
+# Running Go API on Localhost with Backing Services in Docker (Using Docker Run)
+
+## Startup Backing Services
+
+```
+make mongodb-run
+make rabbitmq-run
+make docker-ps-ports
+```
+
+## Setup RabbitMQ Queue for Gumball API
+
+```
+	-- RabbitMQ Setup
+	-- Default User/Pass: guest/guest
+
+	http://localhost:8080
+
+	-- RabbitMQ Create Queue:  
+
+		Queue Name: gumball
+		Durable:	no
+```
+
+## Setup MongoDB Database
+
+```
+	-- Gumball MongoDB Create Database
+
+		Database Name: cmpe281
+		Collection Name: gumball
+
+  	-- Gumball MongoDB Collection (Create Document) --
+
+	use cmpe281
+	show dbs
+	
+    db.gumball.insert(
+	    { 
+	      Id: 1,
+	      CountGumballs: NumberInt(202),
+	      ModelNumber: 'M102988',
+	      SerialNumber: '1234998871109' 
+	    }
+	) ;
+
+    -- Gumball MongoDB Collection - Find Gumball Document --
+
+    db.gumball.find( { Id: 1 } ) ;
+
+```
+
+## Map "rabbitmq" and "mongodb" to localhhost
+
+```
+# I.E. /etc/hosts (on unix)
+# Custom Entries for Development
+127.0.0.1       mongodb
+127.0.0.1       rabbitmq
+```
+
+## Build and Run Gumball API
+
+```
+# Note: make sure GOPATH is set
+make build
+make start
+```
+
+## Test Gumball API
+
+```
+test-ping:
+	curl localhost:3000/ping
+
+test-get-inventory:
+	curl localhost:3000/gumball
+
+test-update-inventory:
+	curl -X PUT \
+  	http://localhost:3000/gumball \
+  	-H 'Content-Type: application/json' \
+  	-d '{ \
+  		"CountGumballs": 1000 }' 
+
+test-place-order:
+	curl -X POST \
+  	http://localhost:3000/order \
+  	-H 'Content-Type: application/json'
+
+test-order-status:
+	curl -X GET \
+  	http://localhost:3000/order \
+  	-H 'Content-Type: application/json'
+
+test-process-order:
+	curl -X POST \
+  	http://localhost:3000/orders \
+  	-H 'Content-Type: application/json'
+```
+
+## Clean Up
+
+```
+make docker-clean
+```
+
+
+# Running Go API and Backing Services in Docker (Using Docker Compose)
+
+
+
+# Running Go API and Backing Services in Docker Cloud (Using Docker Stack)
+
+
+
+
+
+
+
+
+
+
+
