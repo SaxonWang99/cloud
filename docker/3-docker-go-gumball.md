@@ -117,27 +117,27 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 
 /*
 
-	-- RabbitMQ Setup
-	-- Default User/Pass: guest/guest
+-- RabbitMQ Setup
+-- Default User/Pass: guest/guest
 
 	http://localhost:8080
 
-	-- RabbitMQ Create Queue:  
+-- RabbitMQ Create Queue:  
 
-		Queue Name: gumball
-		Durable:	no
+	Queue Name: gumball
+	Durable:	no
 
-	-- Gumball MongoDB Create Database
+-- Gumball MongoDB Create Database
 
-		Database Name: cmpe281
-		Collection Name: gumball
+	Database Name: cmpe281
+	Collection Name: gumball
 
-  	-- Gumball MongoDB Collection (Create Document) --
+-- Gumball MongoDB Collection (Create Document)
 
 	use cmpe281
 	show dbs
-	
-    db.gumball.insert(
+
+	db.gumball.insert(
 	    { 
 	      Id: 1,
 	      CountGumballs: NumberInt(202),
@@ -146,29 +146,29 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 	    }
 	) ;
 
-    -- Gumball MongoDB Collection - Find Gumball Document --
+-- Gumball MongoDB Collection - Find Gumball Document
 
-    db.gumball.find( { Id: 1 } ) ;
+	db.gumball.find( { Id: 1 } ) ;
 
-    {
-        "_id" : ObjectId("54741c01fa0bd1f1cdf71312"),
-        "Id" : 1,
-        "CountGumballs" : 202,
-        "ModelNumber" : "M102988",
-        "SerialNumber" : "1234998871109"
-    }
+	{
+	    "_id" : ObjectId("54741c01fa0bd1f1cdf71312"),
+	    "Id" : 1,
+	    "CountGumballs" : 202,
+	    "ModelNumber" : "M102988",
+	    "SerialNumber" : "1234998871109"
+	}
 
-    -- Gumball MongoDB Collection - Update Gumball Document --
+-- Gumball MongoDB Collection - Update Gumball Document
 
-    db.gumball.update( 
-        { Id: 1 }, 
-        { $set : { CountGumballs : NumberInt(10) } },
-        { multi : false } 
-    )
+	db.gumball.update( 
+	    { Id: 1 }, 
+	    { $set : { CountGumballs : NumberInt(10) } },
+	    { multi : false } 
+	)
 
-    -- Gumball Delete Documents
+-- Gumball Delete Documents
 
-    db.gumball.remove({})
+	db.gumball.remove({})
 
  ```
 
