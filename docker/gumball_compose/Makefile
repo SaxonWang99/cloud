@@ -29,16 +29,15 @@ docker-build:
 
 rabbitmq-run:
 	docker run --name rabbitmq \
-			   -p 8080:15672 -p 4369:4369 -p 5672:5672 \
 			   -d rabbitmq:3-management
 mongodb-run:
-	docker run --name mongodb -p 27017:27017 -d mongo:3.7
+	docker run --name mongodb -d mongo:3.7
 
 docker-run:
 	docker run \
 	  		--link mongodb:mongodb \
             --link rabbitmq:rabbitmq \
-			--name gumball -p 3000:3000 -td gumball
+			--name gumball -p 9000:3000 -td gumball
 	docker ps
 
 docker-network:

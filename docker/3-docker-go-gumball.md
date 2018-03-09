@@ -6,11 +6,11 @@
 * https://github.com/paulnguyen/cmpe281/tree/master/docker/gumball_compose
 * https://github.com/paulnguyen/cmpe281/tree/master/docker/gumball_dockercloud
 
-
 ## Docker Build CLI
 
 * https://docs.docker.com/edge/engine/reference/commandline/docker/
 * https://docs.docker.com/edge/engine/reference/commandline/build/
+* https://docs.docker.com/edge/engine/reference/commandline/run/
 
 ## Docker Compose
 
@@ -27,6 +27,14 @@
 ## Take a Tour of Go
 
 * https://tour.golang.org/list
+
+## MongoDB
+
+* https://docs.mongodb.com/manual/mongo/
+
+## RabbitmQ
+
+* https://www.rabbitmq.com/management-cli.html
 
 
 # Go Gumball Sample Code
@@ -174,6 +182,8 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 
 # Go Gumball API Makefile
 
+* https://github.com/paulnguyen/cmpe281/tree/master/docker/gumball_makefile
+
 ```
 build:
 	go build gumball
@@ -254,6 +264,8 @@ test-process-order:
 
 
 # Running Go API on Localhost with Backing Services in Docker (Using Docker Run)
+
+* https://github.com/paulnguyen/cmpe281/tree/master/docker/gumball_makefile
 
 ## Startup Backing Services
 
@@ -361,18 +373,342 @@ make docker-clean
 ```
 
 
+# Running Go API and Backing Services in Docker (Using Docker Run)
+
+* https://github.com/paulnguyen/cmpe281/tree/master/docker/gumball_compose
+
+## Build and Startup Docker Containers (note: only gumball port is mapped)
+
+```
+docker-build: 
+	docker build -t gumball .
+	docker images
+
+rabbitmq-run:
+	docker run --name rabbitmq \
+			   -d rabbitmq:3-management
+mongodb-run:
+	docker run --name mongodb -d mongo:3.7
+
+docker-run:
+	docker run \
+	  		--link mongodb:mongodb \
+            --link rabbitmq:rabbitmq \
+			--name gumball -p 9000:3000 -td gumball
+	docker ps
+
+docker-ps-ports:
+	 docker ps --all --format "table {{.Names}}\t{{.Ports}}\t"
+```
+
+## Configure RabbitMQ and MongoDB Backing Services
+
+```
+-- RabbitMQ Create Queue:  
+
+	Queue Name: gumball
+	Durable:	no
+
+	> docker exec -it rabbitmq bash 
+	> rabbitmqadmin declare queue name=gumball durable=false
+	> rabbitmqadmin list queues vhost name node messages 
+
+-- Gumball MongoDB Create Database
+
+	Database Name: cmpe281
+	Collection Name: gumball
+
+-- Gumball MongoDB Collection (Create Document)
+
+	> docker exec -it mongodb bash 
+	> mongo
+	
+	use cmpe281
+	show dbs
+
+	db.gumball.insert(
+	    { 
+	      Id: 1,
+	      CountGumballs: NumberInt(202),
+	      ModelNumber: 'M102988',
+	      SerialNumber: '1234998871109' 
+	    }
+	) ;
+
+-- Gumball MongoDB Collection - Find Gumball Document
+
+	db.gumball.find( { Id: 1 } ) ;
+```
+
+##  Test Gumball API
+
+```
+test-ping:
+	curl localhost:9000/ping
+
+test-get-inventory:
+	curl localhost:9000/gumball
+
+test-update-inventory:
+	curl -X PUT \
+  	http://localhost:9000/gumball \
+  	-H 'Content-Type: application/json' \
+  	-d '{ \
+  		"CountGumballs": 1000 }' 
+
+test-place-order:
+	curl -X POST \
+  	http://localhost:9000/order \
+  	-H 'Content-Type: application/json'
+
+test-order-status:
+	curl -X GET \
+  	http://localhost:9000/order \
+  	-H 'Content-Type: application/json'
+
+test-process-order:
+	curl -X POST \
+  	http://localhost:9000/orders \
+  	-H 'Content-Type: application/json'
+```
+
 # Running Go API and Backing Services in Docker (Using Docker Compose)
 
+* https://github.com/paulnguyen/cmpe281/tree/master/docker/gumball_compose
 
+## Docker Compose Configuration: docker-compose.yml
+
+```
+version: "3"
+services:
+  gumball:
+    image: <your account>/gumball:gumball-v2.0
+    ports:
+      - "9000:3000"
+    networks:
+      - webnet
+  rabbitmq:
+    image: rabbitmq:3-management
+    networks:
+      - webnet
+  mongodb:
+    image: mongo:3.7
+    networks:
+      - webnet
+networks:
+  webnet:
+```
+
+## Build Gumball Image and Publish to your Docker Hub Account
+
+* Use: docker.sh
+
+1. login
+2. build
+3. push
+
+## Startup Docker Containers (note: only gumball port is mapped)
+
+```
+up:
+	docker-compose up -d
+
+down:
+	docker-compose down
+
+docker-ps-ports:
+	 docker ps --all --format "table {{.Names}}\t{{.Ports}}\t"
+```
+
+## Configure RabbitMQ and MongoDB Backing Services
+
+```
+-- RabbitMQ Create Queue:  
+
+	Queue Name: gumball
+	Durable:	no
+
+	> docker exec -it <name of containeer> bash 
+	> rabbitmqadmin declare queue name=gumball durable=false
+	> rabbitmqadmin list queues vhost name node messages 
+
+-- Gumball MongoDB Create Database
+
+	Database Name: cmpe281
+	Collection Name: gumball
+
+-- Gumball MongoDB Collection (Create Document)
+
+	> docker exec -it <name of container> bash 
+	> mongo
+	
+	use cmpe281
+	show dbs
+
+	db.gumball.insert(
+	    { 
+	      Id: 1,
+	      CountGumballs: NumberInt(202),
+	      ModelNumber: 'M102988',
+	      SerialNumber: '1234998871109' 
+	    }
+	) ;
+
+-- Gumball MongoDB Collection - Find Gumball Document
+
+	db.gumball.find( { Id: 1 } ) ;
+```
+
+##  Test Gumball API
+
+```
+test-ping:
+	curl localhost:9000/ping
+
+test-get-inventory:
+	curl localhost:9000/gumball
+
+test-update-inventory:
+	curl -X PUT \
+  	http://localhost:9000/gumball \
+  	-H 'Content-Type: application/json' \
+  	-d '{ \
+  		"CountGumballs": 1000 }' 
+
+test-place-order:
+	curl -X POST \
+  	http://localhost:9000/order \
+  	-H 'Content-Type: application/json'
+
+test-order-status:
+	curl -X GET \
+  	http://localhost:9000/order \
+  	-H 'Content-Type: application/json'
+
+test-process-order:
+	curl -X POST \
+  	http://localhost:9000/orders \
+  	-H 'Content-Type: application/json'
+```
 
 # Running Go API and Backing Services in Docker Cloud (Using Docker Stack)
 
+* https://github.com/paulnguyen/cmpe281/tree/master/docker/gumball_dockercloud
 
 
+## Docker Cloud Stack Configuration: docker-cloud.yml
 
+```
+lb:
+  image: 'dockercloud/haproxy:latest'
+  links:
+    - gumball
+  ports:
+    - '80:80'
+  roles:
+    - global
+gumball:
+  image: paulnguyen/gumball
+  links:
+    - rabbitmq
+    - mongodb
+  target_num_containers: 2
+rabbitmq:
+  image: rabbitmq:3-management
+mongodb:
+  image: mongo:3.7
+```
 
+## Build Gumball Image and Publish to your Docker Hub Account
 
+* Use: docker.sh
 
+1. login
+2. build
+3. push
+
+## Startup Docker Containers in Docker Cloud
+
+* notes
+
+## Configure RabbitMQ and MongoDB Backing Services
+
+```
+-- RabbitMQ Create Queue:  
+
+	> docker exec -it <name of containeer> bash 
+	> rabbitmqadmin declare queue name=gumball durable=false
+	> rabbitmqadmin list queues vhost name node messages 
+
+-- Gumball MongoDB Collection (Create Document)
+	
+	use cmpe281
+
+	db.gumball.insert(
+	    { 
+	      Id: 1,
+	      CountGumballs: NumberInt(202),
+	      ModelNumber: 'M102988',
+	      SerialNumber: '1234998871109' 
+	    }
+	) ;
+
+-- Gumball MongoDB Collection - Find Gumball Document
+
+	db.gumball.find( { Id: 1 } ) ;
+```
+
+##  Test Gumball API
+
+```
+test-ping:
+	curl dockerhost/ping
+
+test-get-inventory:
+	curl dockerhost/gumball
+
+test-update-inventory:
+	curl -X PUT \
+  	http://dockerhost/gumball \
+  	-H 'Content-Type: application/json' \
+  	-d '{ \
+  		"CountGumballs": 1000 }' 
+
+test-place-order:
+	curl -X POST \
+  	http://dockerhost/order \
+  	-H 'Content-Type: application/json'
+
+test-place-order:
+	curl -X POST \
+  	http://dockerhost/order \
+  	-H 'Content-Type: application/json'
+
+test-place-order:
+	curl -X POST \
+  	http://dockerhost/order \
+  	-H 'Content-Type: application/json'
+
+test-order-status:
+	curl -X GET \
+  	http://dockerhost/order \
+  	-H 'Content-Type: application/json'
+
+test-order-status:
+	curl -X GET \
+  	http://dockerhost/order \
+  	-H 'Content-Type: application/json'
+  	
+test-process-order:
+	curl -X POST \
+  	http://dockerhost/orders \
+  	-H 'Content-Type: application/json'
+
+test-order-status:
+	curl -X GET \
+  	http://dockerhost/order \
+  	-H 'Content-Type: application/json'
+```
 
 
 
