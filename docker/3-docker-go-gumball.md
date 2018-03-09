@@ -642,7 +642,7 @@ mongodb:
 
 ## Startup Docker Containers in Docker Cloud
 
-![Example](./3-cloudstack-run.png){:height="100px" width="50px"}
+![Example](./3-cloudstack-run.png)
 
 ## Configure RabbitMQ and MongoDB Backing Services
 
