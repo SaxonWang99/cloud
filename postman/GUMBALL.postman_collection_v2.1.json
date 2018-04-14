@@ -1,8 +1,7 @@
 {
 	"info": {
-		"name": "GUMBALL",
 		"_postman_id": "f95ea5ec-6403-7301-78b1-6031d461c675",
-		"description": "",
+		"name": "GUMBALL",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -35,8 +34,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -65,8 +63,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -95,8 +92,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -125,8 +121,7 @@
 							"path": [
 								"orders"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -167,8 +162,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -201,8 +195,7 @@
 							"path": [
 								"ping"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -229,8 +222,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -257,8 +249,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -297,13 +288,12 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "GO | Gumball Get Order Status",
+					"name": "GO | Gumball Get Order Status (All Orders)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -325,13 +315,68 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "GO | Gumball Process Orders",
+					"name": "GO | Gumball Get Order Status (Order ID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/order/6a931de1-41cb-49a5-bc0e-9b437d35ff0e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"6a931de1-41cb-49a5-bc0e-9b437d35ff0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GO | Gumball Process Order (Order ID)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/order/6a931de1-41cb-49a5-bc0e-9b437d35ff0e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"6a931de1-41cb-49a5-bc0e-9b437d35ff0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GO | Gumball Process Orders (All Orders)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -353,8 +398,7 @@
 							"path": [
 								"orders"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -399,8 +443,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -428,8 +471,7 @@
 								"gumball",
 								"8734151882571776"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -464,8 +506,7 @@
 							"path": [
 								"ping"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -494,8 +535,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -524,8 +564,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -535,10 +574,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "0cc71653-2bd4-4188-b8af-f4c1e18cadcd",
 								"type": "text/javascript",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
-									"postman.setGlobalVariable(\"order_id\", json.id );"
+									"postman.setGlobalVariable(\"order_id\", json.Id );"
 								]
 							}
 						}
@@ -566,13 +606,12 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "GO | Gumball Get Order Status",
+					"name": "GO | Gumball Get Order Status (All Orders)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -596,13 +635,72 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "GO | Gumball Process Orders",
+					"name": "GO | Gumball Get Order Status (Order ID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.nguyenresearch.com:8080/order/{{order_id}}",
+							"host": [
+								"api",
+								"nguyenresearch",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"{{order_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GO | Gumball Process Order (Order ID)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.nguyenresearch.com:8080/order/{{order_id}}",
+							"host": [
+								"api",
+								"nguyenresearch",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"{{order_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GO | Gumball Process Orders (All Orders)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -626,8 +724,7 @@
 							"path": [
 								"orders"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -674,8 +771,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -705,8 +801,7 @@
 								"gumball",
 								"8734151882571776"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -735,8 +830,7 @@
 							"path": [
 								"ping"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -765,8 +859,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -795,8 +888,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -837,8 +929,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -867,8 +958,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -897,8 +987,7 @@
 							"path": [
 								"orders"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -931,8 +1020,7 @@
 							"path": [
 								"ping"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -959,8 +1047,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -987,8 +1074,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1027,8 +1113,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1055,8 +1140,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1083,8 +1167,7 @@
 							"path": [
 								"orders"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -1117,8 +1200,7 @@
 							"path": [
 								"ping"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1145,8 +1227,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1173,8 +1254,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1213,8 +1293,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1241,8 +1320,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1269,8 +1347,7 @@
 							"path": [
 								"orders"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -1302,8 +1379,7 @@
 							"path": [
 								"ping"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1329,8 +1405,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1356,8 +1431,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1395,8 +1469,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1422,8 +1495,7 @@
 							"path": [
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1449,8 +1521,7 @@
 							"path": [
 								"orders"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -1468,6 +1539,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "apikey",
+								"value": "{{api_key}}"
 							}
 						],
 						"body": {
@@ -1485,8 +1560,7 @@
 								"goapi",
 								"ping"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1515,8 +1589,7 @@
 								"goapi",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1531,7 +1604,7 @@
 							},
 							{
 								"key": "apikey",
-								"value": "94ee60f882cb45e582c7c7670dee61c9"
+								"value": "{{api_key}}"
 							}
 						],
 						"body": {
@@ -1548,8 +1621,7 @@
 								"goapi",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1564,7 +1636,7 @@
 							},
 							{
 								"key": "apikey",
-								"value": "94ee60f882cb45e582c7c7670dee61c9"
+								"value": "{{api_key}}"
 							}
 						],
 						"body": {
@@ -1581,8 +1653,7 @@
 								"goapi",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1609,7 +1680,7 @@
 							},
 							{
 								"key": "apikey",
-								"value": "94ee60f882cb45e582c7c7670dee61c9"
+								"value": "{{api_key}}"
 							}
 						],
 						"body": {
@@ -1626,8 +1697,7 @@
 								"goapi",
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1642,7 +1712,7 @@
 							},
 							{
 								"key": "apikey",
-								"value": "94ee60f882cb45e582c7c7670dee61c9"
+								"value": "{{api_key}}"
 							}
 						],
 						"body": {
@@ -1659,8 +1729,7 @@
 								"goapi",
 								"order"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1675,7 +1744,7 @@
 							},
 							{
 								"key": "apikey",
-								"value": "94ee60f882cb45e582c7c7670dee61c9"
+								"value": "{{api_key}}"
 							}
 						],
 						"body": {
@@ -1692,8 +1761,7 @@
 								"goapi",
 								"orders"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1702,10 +1770,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://dockerhost:8001/status",
 							"protocol": "http",
@@ -1716,8 +1781,7 @@
 							"path": [
 								"status"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1726,10 +1790,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://dockerhost:8001/apis",
 							"protocol": "http",
@@ -1740,8 +1801,7 @@
 							"path": [
 								"apis"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1769,8 +1829,35 @@
 							"path": [
 								"apis"
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kong Server | Add API (Docker Cloud)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"goapi\",\n    \"request_path\": \"/goapi\",\n    \"strip_request_path\": \"true\",\n    \"preserve_host\": \"true\",\n    \"upstream_url\": \"http://api.nguyenresearch.com:8080/\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://dockerhost:8001/apis",
+							"protocol": "http",
+							"host": [
+								"dockerhost"
+							],
+							"port": "8001",
+							"path": [
+								"apis"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1779,10 +1866,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://dockerhost:8001/apis/goapi",
 							"protocol": "http",
@@ -1794,8 +1878,7 @@
 								"apis",
 								"goapi"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1804,10 +1887,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://dockerhost:8001/apis/goapi",
 							"protocol": "http",
@@ -1819,8 +1899,7 @@
 								"apis",
 								"goapi"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1829,10 +1908,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://dockerhost:8001/apis/goapi/plugins",
 							"protocol": "http",
@@ -1845,8 +1921,7 @@
 								"goapi",
 								"plugins"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1855,10 +1930,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://dockerhost:8001/apis/goapi/plugins/12cc3fd7-c07e-4c3b-bc0f-465e311bf948",
 							"protocol": "http",
@@ -1872,8 +1944,7 @@
 								"plugins",
 								"12cc3fd7-c07e-4c3b-bc0f-465e311bf948"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1904,8 +1975,7 @@
 								"goapi",
 								"plugins"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1942,8 +2012,7 @@
 								"goapi",
 								"plugins"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1973,8 +2042,7 @@
 								"consumers",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1984,10 +2052,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "5ffe8d9d-5712-4906-848e-5ca995745127",
 								"type": "text/javascript",
 								"exec": [
 									"var response = JSON.parse(responseBody);",
-									"postman.setGlobalVariable(\"starbucks_api_key\", response.key);",
+									"postman.setGlobalVariable(\"api_key\", response.key);",
 									""
 								]
 							}
@@ -2017,8 +2086,7 @@
 								"apiclient",
 								"key-auth"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2048,8 +2116,7 @@
 								"consumers",
 								"apiclient"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2058,10 +2125,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://dockerhost:8001/consumers",
 							"protocol": "http",
@@ -2072,8 +2136,7 @@
 							"path": [
 								"consumers"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -2107,8 +2170,7 @@
 								"gumball",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2136,8 +2198,7 @@
 								"gumball",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2177,8 +2238,7 @@
 								"order",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2206,8 +2266,7 @@
 								"order",
 								"6"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2237,8 +2296,7 @@
 								"gumball",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2268,8 +2326,7 @@
 								"gumball",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2311,8 +2368,7 @@
 								"order",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2342,8 +2398,7 @@
 								"order",
 								"1"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -2358,10 +2413,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://{{host}}:{{port}}/gumball",
 							"protocol": "http",
@@ -2372,8 +2424,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2401,8 +2452,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2430,8 +2480,7 @@
 							"path": [
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2440,10 +2489,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://{{host}}:{{port}}/v1/gumball",
 							"protocol": "http",
@@ -2455,8 +2501,7 @@
 								"v1",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2485,8 +2530,7 @@
 								"v1",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2515,8 +2559,7 @@
 								"v1",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2525,10 +2568,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://{{host}}:{{port}}/v2/gumball",
 							"protocol": "http",
@@ -2540,8 +2580,7 @@
 								"v2",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2570,8 +2609,7 @@
 								"v2",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2600,8 +2638,7 @@
 								"v2",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2610,10 +2647,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://{{host}}:{{port}}/v3/gumball",
 							"protocol": "http",
@@ -2625,8 +2659,7 @@
 								"v3",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2655,8 +2688,7 @@
 								"v3",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2665,10 +2697,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "http://{{host}}:{{port}}/v4/gumball",
 							"protocol": "http",
@@ -2680,8 +2709,7 @@
 								"v4",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2710,8 +2738,7 @@
 								"v4",
 								"gumball"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
