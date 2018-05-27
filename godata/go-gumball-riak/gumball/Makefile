@@ -29,7 +29,7 @@ mysql-up:
 	docker-compose scale mysql=1
 
 riak-up:
-	docker-compose scale coordinator=1 member=2
+	docker-compose scale coordinator=1 member=3
 
 riak-up-node1:
 	docker-compose scale coordinator=1 

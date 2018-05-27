@@ -23,21 +23,28 @@ build:
 start:
 	./gumball 
 
+test-ping:
+	curl localhost:3000/ping
+
+test-gumball:
+	curl localhost:3000/gumball
+
 docker-build: 
 	docker build -t gumball .
 	docker images
 
 rabbitmq-run:
 	docker run --name rabbitmq \
+			   -p 8080:15672 -p 4369:4369 -p 5672:5672 \
 			   -d rabbitmq:3-management
 mongodb-run:
-	docker run --name mongodb -d mongo:3.7
+	docker run --name mongodb -p 27017:27017 -d mongo
 
 docker-run:
 	docker run \
 	  		--link mongodb:mongodb \
             --link rabbitmq:rabbitmq \
-			--name gumball -p 9000:3000 -td gumball
+			--name gumball -p 3000:3000 -td gumball
 	docker ps
 
 docker-network:
@@ -66,48 +73,4 @@ docker-ps:
 
 docker-ps-ports:
 	 docker ps --all --format "table {{.Names}}\t{{.Ports}}\t"
-
-test-ping:
-	curl localhost:9000/ping
-
-test-get-inventory:
-	curl localhost:9000/gumball
-
-test-update-inventory:
-	curl -X PUT \
-  	http://localhost:9000/gumball \
-  	-H 'Content-Type: application/json' \
-  	-d '{ \
-  		"CountGumballs": 1000 }' 
-
-test-place-order:
-	curl -X POST \
-  	http://localhost:9000/order \
-  	-H 'Content-Type: application/json'
-
-test-order-status:
-	curl -X GET \
-  	http://localhost:9000/order \
-  	-H 'Content-Type: application/json'
-
-test-process-order:
-	curl -X POST \
-  	http://localhost:9000/orders \
-  	-H 'Content-Type: application/json'
-
-up:
-	docker-compose up -d
-
-down:
-	docker-compose down
-
-network-ls:
-	docker network ls
-
-network-create:
-	docker network create webgateway
-
-network-prune:
-	docker network prune
-	
 

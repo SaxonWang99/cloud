@@ -131,6 +131,12 @@ docker-network:
 docker-network-inspect:
 	docker network inspect host
 
+network-create:
+	docker network create gumball-riak_default
+
+network-prune:
+	docker network prune	
+
 docker-ip:
 	docker-machine ip
 
